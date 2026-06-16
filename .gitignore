@@ -8,3 +8,5 @@ Thumbs.db
 
 # Node (none used, but just in case)
 node_modules/
+
+.vercel
