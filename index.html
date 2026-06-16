@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxe Development — A Better Website, Built to Rank | A2Z MKTG Proposal</title>
+<meta name="description" content="A2Z MKTG proposal for Luxe Development: 7 homepage concepts, the #1 ranking strategy, and 3 build packages.">
+<link rel="stylesheet" href="luxe-system.css">
+<style>
+  body{background:var(--ink);color:var(--ivory)}
+  .ix-hero{padding:clamp(3.5rem,8vw,6rem) var(--pad) clamp(2rem,4vw,3rem);max-width:var(--maxw);margin:0 auto}
+  .ix-hero .kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-lt);font-weight:500}
+  .ix-hero h1{font-size:clamp(2.5rem,6.4vw,5rem);color:#fff;margin:1rem 0;line-height:1.0}
+  .ix-hero h1 em{font-style:italic;color:var(--brass-lt)}
+  .ix-hero p{max-width:60ch;color:rgba(246,241,231,.75);font-size:1.15rem}
+  .ix-jump{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+  .ix-jump a{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.8rem 1.3rem;
+    border:1px solid var(--line-dk);border-radius:100px;transition:.3s;color:#cfc7b6}
+  .ix-jump a:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+  .ix-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.8rem;font-size:.82rem;color:var(--stone-lt);
+    border-top:1px solid var(--line-dk);padding-top:1.4rem}
+  .ix-meta b{color:#fff;font-weight:600}
+
+  .sec-lbl{max-width:var(--maxw);margin:0 auto;padding:2rem var(--pad) 0;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem}
+  .sec-lbl h2{font-size:clamp(1.6rem,3vw,2.4rem);color:#fff}
+  .sec-lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt)}
+
+  .grid{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 2rem;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{position:relative;border:1px solid var(--line-dk);border-radius:6px;overflow:hidden;background:var(--charcoal);
+    transition:.4s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-5px);border-color:var(--brass);box-shadow:0 26px 60px rgba(0,0,0,.45)}
+  .card__img{aspect-ratio:16/10;overflow:hidden;position:relative}
+  .card__img img{width:100%;height:100%;object-fit:cover;transition:1s ease}
+  .card:hover .card__img img{transform:scale(1.05)}
+  .card__no{position:absolute;top:.9rem;left:.9rem;z-index:2;font-family:var(--serif);font-size:.9rem;
+    background:rgba(20,19,15,.7);backdrop-filter:blur(6px);border:1px solid var(--line-dk);
+    width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:var(--brass-lt)}
+  .card__body{padding:1.3rem 1.4rem 1.5rem;flex:1;display:flex;flex-direction:column}
+  .card__tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
+  .card__body h3{font-size:1.6rem;color:#fff;margin:.4rem 0 .5rem}
+  .card__body p{font-size:.88rem;color:var(--stone-lt);flex:1;line-height:1.55}
+  .card__go{margin-top:1rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--brass-lt);display:inline-flex;gap:.4rem}
+  .card__go span{transition:.3s}.card:hover .card__go span{transform:translateX(5px)}
+
+  /* feature blocks */
+  .feat{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+  @media(max-width:780px){.feat{grid-template-columns:1fr}}
+  .fcard{position:relative;border:1px solid var(--line-dk);border-radius:6px;overflow:hidden;padding:clamp(1.8rem,3vw,2.6rem);
+    background:linear-gradient(135deg,var(--charcoal),var(--ink));transition:.4s;display:flex;flex-direction:column;min-height:260px}
+  .fcard:hover{border-color:var(--brass);transform:translateY(-5px)}
+  .fcard--brass{background:linear-gradient(135deg,#3a2f1c,var(--ink))}
+  .fcard .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
+  .fcard h3{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin:.6rem 0 .7rem}
+  .fcard p{color:rgba(246,241,231,.78);flex:1;font-size:.96rem;max-width:46ch}
+  .fcard .btn{align-self:flex-start;margin-top:1.4rem}
+
+  .note{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad) 5rem}
+  .note__in{background:var(--charcoal);border:1px solid var(--line-dk);border-radius:6px;padding:clamp(1.6rem,3vw,2.2rem)}
+  .note__in h4{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:.7rem}
+  .note__in p{color:var(--stone-lt);font-size:.92rem;max-width:82ch;margin-bottom:.5rem}
+</style>
+</head>
+<body>
+
+<header class="ix-hero">
+  <div class="kicker">A2Z MKTG · Proposal for Luxe Development · June 2026</div>
+  <h1>A better website —<br>one built to <em>rank.</em></h1>
+  <p>Seven homepage directions tailored to the luxury-home market, the exact strategy to reach #1 for the
+  searches that win jobs, and three ways to build it. Explore the proposal below.</p>
+  <div class="ix-jump">
+    <a href="#concepts">7 Homepage Concepts</a>
+    <a href="strategy.html">The #1 Ranking Strategy</a>
+    <a href="packages.html">The 3 Packages</a>
+  </div>
+  <div class="ix-meta">
+    <div><b>Client</b> &nbsp;Luxe Development Inc.</div>
+    <div><b>Market</b> &nbsp;Lemont &amp; Chicago's western suburbs</div>
+    <div><b>Focus</b> &nbsp;Luxury custom homes + renovation</div>
+    <div><b>Rated</b> &nbsp;5.0★ on Google</div>
+  </div>
+</header>
+
+<!-- CONCEPTS -->
+<div class="sec-lbl" id="concepts">
+  <h2>Seven homepage concepts</h2>
+  <span>01 — 07 · same brand, seven strategies</span>
+</div>
+<main class="grid">
+  <a class="card" href="01-editorial.html">
+    <div class="card__img"><span class="card__no">01</span><img src="images/great-room.jpg" alt="Editorial concept"></div>
+    <div class="card__body"><span class="card__tag">Editorial</span><h3>The Editorial</h3>
+      <p>Architectural-Digest restraint — serif, whitespace, work as art.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="02-cinematic.html">
+    <div class="card__img"><span class="card__no">02</span><img src="images/hero-exterior-dusk.jpg" alt="Cinematic concept"></div>
+    <div class="card__body"><span class="card__tag">Cinematic</span><h3>The Cinematic</h3>
+      <p>Dark, full-bleed, immersive. Maximum emotional first impression.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="03-method.html">
+    <div class="card__img"><span class="card__no">03</span><img src="images/facade-day.jpg" alt="Method concept"></div>
+    <div class="card__body"><span class="card__tag">Trust / Process</span><h3>The Method</h3>
+      <p>Leads with "The Luxe Method." Built to reassure high-ticket buyers.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="04-portfolio.html">
+    <div class="card__img"><span class="card__no">04</span><img src="images/outdoor-living.jpg" alt="Portfolio concept"></div>
+    <div class="card__body"><span class="card__tag">Work-first</span><h3>The Portfolio Grid</h3>
+      <p>A bento gallery of projects does the talking. Lets the work sell.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="05-local-authority.html">
+    <div class="card__img"><span class="card__no">05</span><img src="images/kitchen.jpg" alt="Local authority concept"></div>
+    <div class="card__body"><span class="card__tag">Conversion + SEO</span><h3>The Local Authority</h3>
+      <p>Lead form, click-to-call, reviews, 24-suburb block. Built to rank &amp; convert.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="06-heritage.html">
+    <div class="card__img"><span class="card__no">06</span><img src="images/heritage-estate.jpg" alt="Heritage concept"></div>
+    <div class="card__body"><span class="card__tag">Traditional Estate</span><h3>The Heritage</h3>
+      <p>Old-money estate aesthetic — symmetrical, crested, timeless.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <a class="card" href="07-architect.html">
+    <div class="card__img"><span class="card__no">07</span><img src="images/architect-modern.jpg" alt="Architect concept"></div>
+    <div class="card__body"><span class="card__tag">Modern Minimal</span><h3>The Architect</h3>
+      <p>Contemporary-studio precision — grid, hairlines, negative space.</p>
+      <span class="card__go">View live <span>→</span></span></div>
+  </a>
+  <div class="card" style="justify-content:center;align-items:center;text-align:center;background:transparent;border-style:dashed">
+    <div class="card__body" style="flex:none">
+      <span class="card__tag">Same brand system</span>
+      <h3 style="font-size:1.35rem">Ink · Ivory · Brass</h3>
+      <p style="flex:none">All seven share one design system, so you're choosing a direction — not just a color.</p>
+    </div>
+  </div>
+</main>
+
+<!-- FEATURES -->
+<div class="sec-lbl"><h2>The strategy &amp; the build</h2><span>why it ranks · how we deliver</span></div>
+<section class="feat">
+  <a class="fcard fcard--brass" href="strategy.html">
+    <span class="tag">The Plan</span>
+    <h3>How we get you to&nbsp;#1</h3>
+    <p>The money keywords (with real search volumes), why all five market leaders are beatable, and the
+    five-move method to own the top of the page — then turn it into booked jobs.</p>
+    <span class="btn btn--brass">Read the Ranking Strategy →</span>
+  </a>
+  <a class="fcard" href="packages.html">
+    <span class="tag">The Build</span>
+    <h3>Three ways to build it</h3>
+    <p>Starter, Standard and Premium — full site maps, page counts and pricing for each, with a clear
+    recommendation for the build that actually dominates the western-suburb market.</p>
+    <span class="btn btn--on-dark">View the 3 Packages →</span>
+  </a>
+</section>
+
+<section class="note">
+  <div class="note__in">
+    <h4>How to use this proposal</h4>
+    <p>Every concept is a full, responsive homepage — click in, scroll, resize, try it on your phone. The
+    switcher at the bottom of every page jumps between all seven plus the strategy and packages.</p>
+    <p>Photography is AI-generated placeholder imagery standing in for Luxe's real project photos; reviewer
+    names and figures are illustrative pending the client's real numbers.</p>
+  </div>
+</section>
+
+<nav class="compbar" aria-label="Concept switcher">
+  <a class="compbar__home" href="index.html">✦&nbsp;Luxe</a>
+  <a href="01-editorial.html">01</a>
+  <a href="02-cinematic.html">02</a>
+  <a href="03-method.html">03</a>
+  <a href="04-portfolio.html">04</a>
+  <a href="05-local-authority.html">05</a>
+  <a href="06-heritage.html">06</a>
+  <a href="07-architect.html">07</a>
+  <a class="compbar__pill" href="strategy.html">Strategy</a>
+  <a class="compbar__pill" href="packages.html">Packages</a>
+</nav>
+<script src="luxe.js"></script>
+</body>
+</html>

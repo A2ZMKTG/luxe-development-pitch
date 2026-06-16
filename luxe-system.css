@@ -1,0 +1,135 @@
+/* ============================================================
+   LUXE DEVELOPMENT — Shared Brand System
+   Used by all 5 homepage comps so they read as one company.
+   A2Z MKTG · prospect pitch comps · 2026-06
+   ============================================================ */
+
+/* Self-hosted fonts (latin woff2) — instant load, no external dependency */
+@import url('fonts.css');
+
+:root{
+  /* Core palette ----------------------------------------- */
+  --ink:#14130F;          /* warm near-black     */
+  --charcoal:#232019;     /* panels on dark      */
+  --espresso:#2c2820;
+  --ivory:#F6F1E7;        /* primary light bg    */
+  --paper:#FBF8F2;        /* lighter surface     */
+  --bone:#EDE6D7;         /* card / hairline bg  */
+  --brass:#B08D4C;        /* primary accent      */
+  --brass-lt:#C9A86A;
+  --brass-dk:#8a6d38;
+  --stone:#8A8170;        /* muted taupe text    */
+  --stone-lt:#A8A091;
+  --line:rgba(20,19,15,.14);
+  --line-dk:rgba(246,241,231,.16);
+
+  /* Type ------------------------------------------------- */
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+
+  /* Rhythm ----------------------------------------------- */
+  --pad:clamp(1.25rem,5vw,7rem);
+  --maxw:1280px;
+  --r:2px;                /* sharp, architectural corners */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:var(--sans);color:var(--ink);background:var(--ivory);font-weight:400;line-height:1.65;font-size:16.5px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--brass);color:#fff}
+
+/* Typography ---------------------------------------------- */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.01em}
+.display{font-size:clamp(2.6rem,7vw,6rem)}
+.h1{font-size:clamp(2.4rem,5.4vw,4.6rem)}
+.h2{font-size:clamp(1.9rem,3.8vw,3.1rem)}
+.h3{font-size:clamp(1.4rem,2.4vw,2rem)}
+.lede{font-size:clamp(1.1rem,1.5vw,1.35rem);line-height:1.7;color:#4a463c}
+.serif-it{font-family:var(--serif);font-style:italic}
+
+/* Eyebrow / label ---------------------------------------- */
+.eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--brass-dk);display:inline-flex;align-items:center;gap:.8rem}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--brass);display:inline-block}
+.eyebrow.center::after{content:"";width:34px;height:1px;background:var(--brass);display:inline-block}
+.eyebrow.center{justify-content:center}
+.on-dark .eyebrow,.eyebrow.on-dark{color:var(--brass-lt)}
+
+/* Buttons ------------------------------------------------- */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.8rem;
+  font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:1.05rem 2.1rem;
+  border:1px solid var(--ink);background:var(--ink);color:var(--ivory);cursor:pointer;
+  transition:.35s ease;border-radius:var(--r)}
+.btn:hover{background:var(--brass);border-color:var(--brass);color:#fff;transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn--brass{background:var(--brass);border-color:var(--brass);color:#fff}
+.btn--brass:hover{background:var(--brass-dk);border-color:var(--brass-dk)}
+.btn--on-dark{border-color:rgba(255,255,255,.5);background:transparent;color:#fff}
+.btn--on-dark:hover{background:var(--brass);border-color:var(--brass)}
+.link-arrow{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;color:var(--brass-dk);display:inline-flex;gap:.5rem;align-items:center}
+.link-arrow span{transition:.3s}.link-arrow:hover span{transform:translateX(6px)}
+
+/* Layout -------------------------------------------------- */
+.container{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.section{padding-block:clamp(4rem,9vw,8.5rem)}
+.bg-ink{background:var(--ink);color:var(--ivory)}
+.bg-paper{background:var(--paper)}
+.bg-bone{background:var(--bone)}
+.hr{height:1px;background:var(--line);border:0}
+.on-dark .hr,.hr.on-dark{background:var(--line-dk)}
+
+/* Stars --------------------------------------------------- */
+.stars{color:var(--brass);letter-spacing:.18em;font-size:.95rem}
+.google-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);
+  font-size:.82rem;letter-spacing:.04em;color:inherit}
+.google-badge b{font-weight:600}
+
+/* Shared nav --------------------------------------------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem var(--pad);transition:.4s ease}
+.nav__brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+.nav__brand small{font-family:var(--sans);font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;
+  display:block;margin-top:-2px;font-weight:500;opacity:.7}
+.nav__links{display:flex;gap:2.2rem;align-items:center;font-size:.78rem;letter-spacing:.13em;
+  text-transform:uppercase;font-weight:500}
+.nav__links a{opacity:.82;transition:.25s}.nav__links a:hover{opacity:1;color:var(--brass)}
+.nav__cta{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  border:1px solid currentColor;padding:.7rem 1.3rem;border-radius:var(--r);transition:.3s}
+.nav__cta:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+@media(max-width:880px){.nav__links{display:none}}
+
+/* Footer -------------------------------------------------- */
+.foot{background:var(--ink);color:var(--ivory);padding-top:clamp(3.5rem,7vw,6rem)}
+.foot a{opacity:.7;transition:.25s}.foot a:hover{opacity:1;color:var(--brass-lt)}
+.foot__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3.5rem}
+.foot__brand{font-family:var(--serif);font-size:2rem;font-weight:600}
+.foot h5{font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--brass-lt);margin-bottom:1.3rem;font-weight:600}
+.foot ul{list-style:none;display:grid;gap:.7rem;font-size:.92rem}
+.foot__bar{border-top:1px solid var(--line-dk);padding:1.6rem 0;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;font-size:.76rem;letter-spacing:.05em;opacity:.6}
+@media(max-width:760px){.foot__grid{grid-template-columns:1fr 1fr;gap:2rem}}
+
+/* Reveal animation --------------------------------------- */
+.reveal{opacity:0;transform:translateY(26px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Concept switcher bar (shared across all pages) ---------- */
+.compbar{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);z-index:200;max-width:calc(100vw - 1.4rem);
+  background:rgba(20,19,15,.93);backdrop-filter:blur(10px);border:1px solid var(--line-dk);
+  border-radius:100px;padding:.42rem .5rem;display:flex;gap:.18rem;align-items:center;overflow-x:auto;
+  box-shadow:0 18px 50px rgba(0,0,0,.4);scrollbar-width:none}
+.compbar::-webkit-scrollbar{display:none}
+.compbar a{font-family:var(--sans);font-size:.74rem;font-weight:500;letter-spacing:.04em;color:#cfc7b6;
+  padding:.5rem .72rem;border-radius:100px;transition:.25s;white-space:nowrap}
+.compbar a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.compbar a.active{background:var(--brass);color:#fff}
+.compbar__home{color:#fff !important;font-family:var(--serif);font-size:.98rem;font-weight:600;padding-right:.5rem !important}
+.compbar__pill{color:var(--brass-lt) !important;border:1px solid var(--line-dk)}
+.compbar__pill.active{color:#fff !important;border-color:var(--brass)}
+@media(max-width:680px){.compbar{left:.7rem;right:.7rem;transform:none;max-width:none}}
