@@ -1,0 +1,13 @@
+{
+  "name": "Luxe Development",
+  "short_name": "Luxe",
+  "description": "Luxury custom home builder & renovation — Chicago's western suburbs",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ],
+  "theme_color": "#14130F",
+  "background_color": "#14130F",
+  "display": "standalone",
+  "start_url": "/"
+}
