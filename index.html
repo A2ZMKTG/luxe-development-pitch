@@ -63,8 +63,9 @@
   .card__go span{transition:.3s}.card:hover .card__go span{transform:translateX(5px)}
 
   /* feature blocks */
-  .feat{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
-  @media(max-width:780px){.feat{grid-template-columns:1fr}}
+  .feat{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.3rem}
+  @media(max-width:980px){.feat{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.feat{grid-template-columns:1fr}}
   .fcard{position:relative;border:1px solid var(--line-dk);border-radius:6px;overflow:hidden;padding:clamp(1.8rem,3vw,2.6rem);
     background:linear-gradient(135deg,var(--charcoal),var(--ink));transition:.4s;display:flex;flex-direction:column;min-height:260px}
   .fcard:hover{border-color:var(--brass);transform:translateY(-5px)}
@@ -447,7 +448,7 @@
 </main>
 
 <!-- FEATURES -->
-<div class="sec-lbl"><h2>The strategy &amp; the build</h2><span>why it ranks · how we deliver</span></div>
+<div class="sec-lbl"><h2>The strategy, the build &amp; the ecosystem</h2><span>why it ranks · how we deliver · the full web</span></div>
 <section class="feat">
   <a class="fcard fcard--brass" href="strategy.html">
     <span class="tag">The Plan</span>
@@ -462,6 +463,13 @@
     <p>Starter, Standard and Premium — full site maps, page counts and pricing for each, with a clear
     recommendation for the build that actually dominates the western-suburb market.</p>
     <span class="btn btn--on-dark">View the 3 Packages →</span>
+  </a>
+  <a class="fcard" href="ecosystem.html" style="background:linear-gradient(135deg,#1a2620,var(--ink))">
+    <span class="tag">The Full Web</span>
+    <h3>Beyond the website</h3>
+    <p>12 marketing services — GBP posts, review generation, AI voice receptionist, missed-call text-back,
+    CRM pipeline, and more. One strand vs. the whole web.</p>
+    <span class="btn btn--on-dark">See the Ecosystem →</span>
   </a>
 </section>
 
@@ -486,6 +494,7 @@
   <a href="07-architect.html">07</a>
   <a class="compbar__pill" href="strategy.html">Strategy</a>
   <a class="compbar__pill" href="packages.html">Packages</a>
+  <a class="compbar__pill" href="ecosystem.html">Ecosystem</a>
 </nav>
 <script src="luxe.js"></script>
 </body>
