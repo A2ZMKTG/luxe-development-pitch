@@ -15,13 +15,13 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Luxe Development">
 <meta property="og:locale" content="en_US"><meta property="og:title" content="The 3 Packages — Site Maps & Pricing | Luxe Development × A2Z MKTG">
-<meta property="og:description" content="Three website build packages for Luxe Development — Starter, Standard and Premium — with full site maps, page counts and pricing."><meta property="og:url" content="https://luxe-development-pitch.vercel.app/packages.html">
+<meta property="og:description" content="Website builds (Starter, Standard, Premium) plus Organic &amp; Paid Growth marketing — site maps, pricing, and a launch offer: 6 months of Organic Growth free with a Premium build."><meta property="og:url" content="https://luxe-development-pitch.vercel.app/packages.html">
 <meta property="og:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Luxe Development luxury custom home at dusk">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The 3 Packages — Site Maps & Pricing | Luxe Development × A2Z MKTG">
-<meta name="twitter:description" content="Three website build packages for Luxe Development — Starter, Standard and Premium — with full site maps, page counts and pricing."><meta name="twitter:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg">
+<meta name="twitter:description" content="Website builds (Starter, Standard, Premium) plus Organic &amp; Paid Growth marketing — site maps, pricing, and a launch offer: 6 months of Organic Growth free with a Premium build."><meta name="twitter:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg">
 <title>The 3 Packages — Site Maps & Pricing | Luxe Development × A2Z MKTG</title>
-<meta name="description" content="Three website build packages for Luxe Development — Starter, Standard and Premium — with full site maps, page counts and pricing.">
+<meta name="description" content="Website builds (Starter, Standard, Premium) plus Organic &amp; Paid Growth marketing — site maps, pricing, and a launch offer: 6 months of Organic Growth free with a Premium build.">
 <link rel="stylesheet" href="luxe-system.css">
 <style>
   /* ===== PACKAGES · 3 SITEMAPS ========================== */
@@ -76,6 +76,43 @@
   .rec-box{background:var(--ink);color:var(--ivory);border-radius:6px;padding:clamp(1.8rem,3vw,2.6rem)}
   .rec-box h3{color:#fff;font-size:1.7rem;margin-bottom:.8rem}
   .rec-box p{color:rgba(246,241,231,.82)}
+
+  /* premium card free-offer badge */
+  .pk__offer{background:linear-gradient(90deg,rgba(176,141,76,.2),rgba(176,141,76,.05));border-top:1px solid var(--brass);
+    padding:.85rem 1.6rem;display:flex;flex-direction:column;gap:.1rem}
+  .pk__offer b{font-size:.88rem;color:var(--brass-dk)}
+  .pk__offer span{font-size:.7rem;color:var(--stone)}
+
+  /* launch offer band */
+  .offer{background:linear-gradient(135deg,#3a2f1c,var(--ink));color:var(--ivory);border-radius:8px;
+    padding:clamp(2rem,4vw,3.4rem);text-align:center;border:1px solid var(--brass-dk)}
+  .offer__tag{display:inline-block;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-lt);
+    border:1px solid var(--brass-dk);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.2rem;font-weight:600}
+  .offer__h{font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.1rem);color:#fff;line-height:1.08;margin-bottom:1rem}
+  .offer__h em{font-style:italic;color:var(--brass-lt)}
+  .offer p{max-width:62ch;margin:0 auto 1.8rem;color:rgba(246,241,231,.85);font-size:1.05rem}
+  .offer p b{color:#fff}
+  .offer__fine{font-size:.74rem;color:var(--stone-lt);margin-top:1.2rem}
+
+  /* growth retainer cards */
+  .growth-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:start}
+  @media(max-width:820px){.growth-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+  .growth{border:1px solid var(--line);border-radius:6px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+  .growth--organic{border:2px solid var(--brass);box-shadow:0 18px 50px rgba(176,141,76,.16)}
+  .growth__ribbon{background:var(--brass);color:#fff;text-align:center;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.5rem}
+  .growth__head{padding:1.6rem 1.6rem 1.3rem;border-bottom:1px solid var(--line)}
+  .growth__name{font-family:var(--serif);font-size:1.7rem;font-weight:600}
+  .growth__tag{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brass-dk);margin-top:.2rem}
+  .growth__price{font-family:var(--serif);font-size:1.9rem;font-weight:600;margin-top:.9rem}
+  .growth__price small{font-family:var(--sans);font-size:.8rem;color:var(--stone);font-weight:400}
+  .growth__lead{font-size:.92rem;color:#4a463c;margin-top:.5rem}
+  .growth__body{padding:1.4rem 1.6rem;flex:1}
+  .growth__grp{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brass-dk);font-weight:600;margin:1.1rem 0 .5rem}
+  .growth__grp:first-child{margin-top:0}
+  .growth ul{list-style:none;display:grid;gap:.42rem;font-size:.89rem;color:#4a463c;margin:0}
+  .growth li{display:flex;gap:.55rem}
+  .growth li::before{content:"✓";color:var(--brass);font-weight:700;flex:none}
+  .growth__foot{padding:1.1rem 1.6rem 1.6rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--stone)}
 </style>
 <script type="application/ld+json">
 {
@@ -288,7 +325,7 @@
       "@id": "https://luxe-development-pitch.vercel.app/packages.html",
       "url": "https://luxe-development-pitch.vercel.app/packages.html",
       "name": "The 3 Packages — Site Maps & Pricing | Luxe Development × A2Z MKTG",
-      "description": "Three website build packages for Luxe Development — Starter, Standard and Premium — with full site maps, page counts and pricing.",
+      "description": "Website builds (Starter, Standard, Premium) plus Organic &amp; Paid Growth marketing — site maps, pricing, and a launch offer: 6 months of Organic Growth free with a Premium build.",
       "isPartOf": {
         "@id": "https://luxe-development-pitch.vercel.app/#website"
       },
@@ -413,6 +450,7 @@
         <div class="pk__price">$5,500–$9,500</div>
         <div class="pk__meta"><div><b>35–40+</b>pages*</div><div><b>4–6</b>weeks</div></div>
       </div>
+      <div class="pk__offer">🎁 <b>+ 6 months Organic Growth — FREE</b><span>a $9,000 value · your site ranks from day one</span></div>
       <div class="pk__body">
         <div class="pk__lbl">Site map</div>
         <div class="tree"><ul>
@@ -475,6 +513,75 @@
   </div>
 </section>
 
+<!-- GROWTH RETAINERS -->
+<section class="section container" id="growth">
+  <div class="reveal" style="text-align:center;max-width:54ch;margin:0 auto 2.4rem">
+    <span class="eyebrow center">Ongoing Growth · Monthly</span>
+    <h2 class="h2" style="margin-top:1rem">A website gets you online.<br>These get you found.</h2>
+    <p style="color:#4a463c">The build is a one-time cost. Rankings and booked jobs come from the ongoing work — choose the growth engine that fits, or stack both.</p>
+  </div>
+  <div class="growth-grid reveal">
+
+    <!-- ORGANIC -->
+    <div class="growth growth--organic">
+      <div class="growth__ribbon">★ 6 months FREE with a Premium website</div>
+      <div class="growth__head">
+        <div class="growth__name">Organic Growth</div>
+        <div class="growth__tag">Rank on Google &amp; own your leads</div>
+        <div class="growth__price">$1,000–$1,500<small> / mo</small></div>
+        <p class="growth__lead">For dominating search over time — SEO, Google Business Profile, content &amp; CRM, fully managed.</p>
+      </div>
+      <div class="growth__body">
+        <div class="growth__grp">CRM &amp; Automations (GoHighLevel)</div>
+        <ul><li>Missed-call text-back &amp; instant lead alerts</li><li>Review-request engine + response management</li><li>AI website chatbot &amp; lead-nurture sequences</li><li>Unified inbox + reporting dashboard</li></ul>
+        <div class="growth__grp">Google Business Profile</div>
+        <ul><li>8 GBP posts / month (service + city keywords)</li><li>Ongoing GBP optimization</li></ul>
+        <div class="growth__grp">SEO Maintenance</div>
+        <ul><li>Page optimization from Search Console data</li><li>Seasonal content refreshes</li><li>Citation monitoring + technical SEO</li></ul>
+        <div class="growth__grp">Reporting</div>
+        <ul><li>Monthly ranking + lead report</li><li>Monthly 30-min strategy call</li></ul>
+      </div>
+      <div class="growth__foot">$1,000/mo (Starter/Standard) · $1,500/mo (Premium). 3-month minimum. You own everything.</div>
+    </div>
+
+    <!-- PAID -->
+    <div class="growth">
+      <div class="growth__head">
+        <div class="growth__name">Paid Growth</div>
+        <div class="growth__tag">Leads now — from ads</div>
+        <div class="growth__price">$1,000–$1,500<small> / mo + ad spend</small></div>
+        <p class="growth__lead">For leads in week one — Meta &amp; Google ads, fully managed, with advanced CRM follow-up.</p>
+      </div>
+      <div class="growth__body">
+        <div class="growth__grp">CRM &amp; Automations (GoHighLevel)</div>
+        <ul><li>Missed-call text-back &amp; instant lead alerts</li><li>Review-request engine + response management</li><li>AI website chatbot &amp; lead-nurture sequences</li></ul>
+        <div class="growth__grp">Advanced — Paid only</div>
+        <ul><li>AI Voice Receptionist — answers &amp; books missed calls</li><li>Retargeting SMS / email to past customers</li><li>Estimate follow-ups + seasonal promo blasts</li></ul>
+        <div class="growth__grp">Ads Management</div>
+        <ul><li>Meta &amp; Google campaign setup + optimization</li><li>2–3 new ad creatives / month</li><li>Audience testing &amp; refinement</li></ul>
+        <div class="growth__grp">Reporting</div>
+        <ul><li>Monthly ads + leads + ROI report</li><li>Monthly 30-min strategy call</li></ul>
+      </div>
+      <div class="growth__foot">Flat $1,000–$1,500/mo. Ad spend paid directly to Meta/Google (recommended min ~$500/mo). 3-month minimum.</div>
+    </div>
+
+  </div>
+  <p class="reveal" style="text-align:center;font-size:.84rem;color:var(--stone);margin-top:1.4rem">Want to dominate? <strong style="color:var(--brass-dk)">Stack Organic + Paid</strong> for full-market coverage, billed at each rate.</p>
+</section>
+
+<!-- LAUNCH OFFER -->
+<section class="section container" id="offer">
+  <div class="offer reveal">
+    <div class="offer__tag">★ Launch Offer</div>
+    <h2 class="offer__h">Build the Premium website,<br>get <em>6 months of Organic Growth — free.</em></h2>
+    <p>Your new site shouldn't just launch — it should start climbing. Choose the <b>Premium build</b> and we run the
+    entire <b>Organic Growth program</b> (SEO, Google Business Profile, content, CRM &amp; reporting) for six months, on
+    us. A <b>$9,000 value</b> — so you're ranking and capturing leads from day one, not month six.</p>
+    <a class="btn btn--brass" href="tel:+13124450727">Claim the Offer — (312) 445-0727</a>
+    <div class="offer__fine">New Premium builds only. After 6 months, Organic Growth continues at $1,500/mo — cancel anytime with 30 days' notice.</div>
+  </div>
+</section>
+
 <!-- RECOMMENDATION -->
 <section class="section container" id="recommend">
   <div class="rec-box reveal" style="display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,4vw,3rem);align-items:center">
@@ -485,12 +592,13 @@
       [town], and the local searches that book six-figure jobs — Luxe needs the full ranking architecture and
       the ongoing work that earns it. That's the <strong style="color:var(--brass-lt)">Premium build</strong>
       paired with the <strong style="color:var(--brass-lt)">Organic Growth retainer</strong>. Everything below
-      that competes; only this dominates.</p>
+      that competes; only this dominates — and right now, Premium includes <strong style="color:var(--brass-lt)">6
+      months of Organic Growth free</strong>, a $9,000 head start.</p>
     </div>
     <div style="text-align:center">
       <div style="font-family:var(--serif);font-size:1rem;color:var(--brass-lt);letter-spacing:.04em">Recommended package</div>
       <div style="font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);color:#fff;font-weight:600;margin:.4rem 0">Premium</div>
-      <div style="color:rgba(246,241,231,.7);font-size:.9rem">$5,500–$9,500 build<br>+ $1,500/mo Organic Growth</div>
+      <div style="color:rgba(246,241,231,.7);font-size:.9rem">$5,500–$9,500 build<br><b style="color:var(--brass-lt)">+ 6 months Organic Growth FREE</b><br>then $1,500/mo · cancel anytime</div>
       <a class="btn btn--brass" href="tel:+13124450727" style="margin-top:1.4rem">Let's Talk — (312) 445-0727</a>
     </div>
   </div>
