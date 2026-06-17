@@ -113,6 +113,15 @@
   .growth li{display:flex;gap:.55rem}
   .growth li::before{content:"✓";color:var(--brass);font-weight:700;flex:none}
   .growth__foot{padding:1.1rem 1.6rem 1.6rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--stone)}
+
+  /* comparison polish */
+  .cmp th.rec,.cmp td.rec{background:rgba(176,141,76,.07)}
+  .cmp thead th.rec{background:rgba(176,141,76,.16)}
+  .cmp tbody td:first-child{font-weight:500;color:var(--ink)}
+  .cmp-price td{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink)}
+  .cmp-free td{background:rgba(176,141,76,.1);font-weight:700}
+  .cmp-free td.rec{background:rgba(176,141,76,.22)}
+  .cmp-free td:first-child{color:var(--brass-dk)}
 </style>
 <script type="application/ld+json">
 {
@@ -219,12 +228,14 @@
         "https://www.instagram.com/luxedevelopment"
       ],
       "knowsAbout": [
-        "custom home building",
+        "new construction",
         "home additions",
+        "luxury remodeling",
+        "interior remodeling",
+        "interior design",
+        "exterior design",
         "kitchen remodeling",
-        "bathroom remodeling",
-        "whole-home renovation",
-        "finished basements"
+        "bathroom remodeling"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -234,7 +245,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Custom Home Building",
+              "name": "New Construction",
               "areaServed": "Chicago's Western Suburbs",
               "provider": {
                 "@id": "https://luxe-development-pitch.vercel.app/#business"
@@ -245,7 +256,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Whole-Home Renovation",
+              "name": "Home Additions",
               "areaServed": "Chicago's Western Suburbs",
               "provider": {
                 "@id": "https://luxe-development-pitch.vercel.app/#business"
@@ -256,7 +267,51 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Home Additions & Expansions",
+              "name": "Luxury Remodeling",
+              "areaServed": "Chicago's Western Suburbs",
+              "provider": {
+                "@id": "https://luxe-development-pitch.vercel.app/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Interior Remodeling",
+              "areaServed": "Chicago's Western Suburbs",
+              "provider": {
+                "@id": "https://luxe-development-pitch.vercel.app/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Interior Makeover",
+              "areaServed": "Chicago's Western Suburbs",
+              "provider": {
+                "@id": "https://luxe-development-pitch.vercel.app/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Interior Design",
+              "areaServed": "Chicago's Western Suburbs",
+              "provider": {
+                "@id": "https://luxe-development-pitch.vercel.app/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Exterior Design",
               "areaServed": "Chicago's Western Suburbs",
               "provider": {
                 "@id": "https://luxe-development-pitch.vercel.app/#business"
@@ -279,28 +334,6 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Luxury Bathroom Remodeling",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Finished Basements",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Interior & Exterior Design",
               "areaServed": "Chicago's Western Suburbs",
               "provider": {
                 "@id": "https://luxe-development-pitch.vercel.app/#business"
@@ -394,12 +427,12 @@
         <div class="tree"><ul>
           <li class="root">Home</li>
           <li><span class="grp">About / The Studio</span></li>
-          <li><span class="grp">Services</span>
+          <li><span class="grp">Services <em>×4</em></span>
             <ul>
-              <li class="leaf">Custom Homes</li>
-              <li class="leaf">Renovations</li>
-              <li class="leaf">Kitchens</li>
-              <li class="leaf">Bathrooms</li>
+              <li class="leaf">New Construction</li>
+              <li class="leaf">Luxury Remodeling</li>
+              <li class="leaf">Kitchen Remodeling</li>
+              <li class="leaf">Bathroom Remodeling</li>
             </ul>
           </li>
           <li><span class="grp">Portfolio</span> <span class="x">(gallery)</span></li>
@@ -417,16 +450,17 @@
         <div class="pk__price">$3,500–$5,500</div>
         <div class="pk__meta"><div><b>15–20</b>pages</div><div><b>3–4</b>weeks</div></div>
       </div>
+      <div class="pk__offer">🎁 <b>+ 2 months Organic Growth — FREE</b><span>a $2,000 value · start ranking sooner</span></div>
       <div class="pk__body">
         <div class="pk__lbl">Site map</div>
         <div class="tree"><ul>
           <li class="root">Home</li>
           <li><span class="grp">About</span> · <span class="grp">The Luxe Method</span></li>
-          <li><span class="grp">Services <em>×6</em></span>
+          <li><span class="grp">Services <em>×7</em></span>
             <ul>
-              <li class="leaf">Custom Homes · Renovation</li>
-              <li class="leaf">Additions · Kitchens</li>
-              <li class="leaf">Bathrooms · Basements</li>
+              <li class="leaf">New Construction · Home Additions</li>
+              <li class="leaf">Luxury Remodeling · Kitchen · Bath</li>
+              <li class="leaf">Interior · Exterior Design</li>
             </ul>
           </li>
           <li><span class="grp">Locations <em>×5</em></span>
@@ -456,11 +490,11 @@
         <div class="tree"><ul>
           <li class="root">Home</li>
           <li><span class="grp">About</span> · <span class="grp">Method</span> · <span class="grp">FAQ</span> · <span class="grp">Contact</span></li>
-          <li><span class="grp">Services <em>×7</em></span>
+          <li><span class="grp">Services <em>×9</em></span>
             <ul>
-              <li class="leaf">Custom Homes · Whole-Home Reno</li>
-              <li class="leaf">Additions · Kitchens · Bathrooms</li>
-              <li class="leaf">Basements · Interior/Exterior</li>
+              <li class="leaf">New Construction · Home Additions</li>
+              <li class="leaf">Luxury Remodeling · Interior Remodeling · Makeover</li>
+              <li class="leaf">Kitchen · Bath · Interior &amp; Exterior Design</li>
             </ul>
           </li>
           <li><span class="grp">Locations <em>×12–15</em></span>
@@ -494,22 +528,25 @@
     </div>
     <div class="reveal" style="overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:6px">
       <table class="cmp">
-        <thead><tr><th>Feature</th><th>Starter</th><th>Standard</th><th class="rec">Premium ★</th></tr></thead>
+        <thead><tr><th>What you get</th><th>Starter</th><th>Standard</th><th class="rec">Premium ★</th></tr></thead>
         <tbody>
-          <tr><td>Pages</td><td>8–10</td><td>15–20</td><td class="rec">35–90</td></tr>
-          <tr><td>Dedicated service pages</td><td>4</td><td>6</td><td class="rec">7</td></tr>
+          <tr class="cmp-price"><td>One-time build</td><td>$1,500–3,500</td><td>$3,500–5,500</td><td class="rec">$5,500–9,500</td></tr>
+          <tr><td>Total pages</td><td>8–10</td><td>15–20</td><td class="rec">35–90</td></tr>
+          <tr><td>Dedicated service pages</td><td>4</td><td>7</td><td class="rec">9</td></tr>
           <tr><td>Local suburb pages</td><td class="no">—</td><td>5</td><td class="rec">12–15</td></tr>
           <tr><td>Project case-study pages</td><td class="no">—</td><td>gallery</td><td class="rec yes">8 → 40+</td></tr>
+          <tr><td>SEO project gallery</td><td class="yes">✓</td><td class="yes">✓</td><td class="rec yes">✓</td></tr>
           <tr><td>Cost-guide / content hub</td><td class="no">—</td><td class="no">—</td><td class="rec yes">✓</td></tr>
           <tr><td>Full schema markup</td><td>basic</td><td class="yes">✓</td><td class="rec yes">✓</td></tr>
           <tr><td>AI-readiness (llms.txt, static)</td><td class="no">—</td><td>partial</td><td class="rec yes">✓ full</td></tr>
           <tr><td>GBP + top-30 citations*</td><td class="no">—</td><td class="yes">✓</td><td class="rec yes">✓</td></tr>
           <tr><td>GHL CRM + lead automations*</td><td class="no">—</td><td class="yes">✓</td><td class="rec yes">✓</td></tr>
+          <tr class="cmp-free"><td>🎁 Free Organic Growth</td><td class="no">—</td><td>2 months</td><td class="rec">6 months</td></tr>
           <tr><td>Built to rank #1</td><td class="no">—</td><td>locally</td><td class="rec yes">✓ market-wide</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:.78rem;color:var(--stone);margin-top:1rem">*GBP, citations, GHL CRM &amp; ongoing SEO are included when paired with an <strong>Organic Growth retainer</strong> ($1,000/mo Starter–Standard · $1,500/mo Premium). The website is a one-time build; rankings are earned by the ongoing work. You own the site, content and images — always.</p>
+    <p style="font-size:.78rem;color:var(--stone);margin-top:1rem">*GBP, citations, GHL CRM &amp; ongoing SEO are included when paired with an <strong>Organic Growth retainer</strong> ($1,000/mo Starter–Standard · $1,500/mo Premium). The website is a one-time build; rankings are earned by the ongoing work. You own the site, content and images — always. <strong style="color:var(--brass-dk)">Standard builds include 2 months of Organic Growth free; Premium builds include 6.</strong></p>
   </div>
 </section>
 
@@ -524,7 +561,7 @@
 
     <!-- ORGANIC -->
     <div class="growth growth--organic">
-      <div class="growth__ribbon">★ 6 months FREE with a Premium website</div>
+      <div class="growth__ribbon">★ FREE — 2 months with Standard · 6 months with Premium</div>
       <div class="growth__head">
         <div class="growth__name">Organic Growth</div>
         <div class="growth__tag">Rank on Google &amp; own your leads</div>
@@ -578,7 +615,7 @@
     entire <b>Organic Growth program</b> (SEO, Google Business Profile, content, CRM &amp; reporting) for six months, on
     us. A <b>$9,000 value</b> — so you're ranking and capturing leads from day one, not month six.</p>
     <a class="btn btn--brass" href="tel:+13124450727">Claim the Offer — (312) 445-0727</a>
-    <div class="offer__fine">New Premium builds only. After 6 months, Organic Growth continues at $1,500/mo — cancel anytime with 30 days' notice.</div>
+    <div class="offer__fine">Premium builds get 6 months free · Standard builds get 2 months free. After the free period, Organic Growth continues at $1,500/mo (Premium) or $1,000/mo (Standard) — cancel anytime with 30 days' notice.</div>
   </div>
 </section>
 
