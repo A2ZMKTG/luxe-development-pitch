@@ -83,6 +83,46 @@
   .tree .pill{font-family:var(--sans);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
     color:#fff;background:var(--brass);padding:.12rem .44rem;border-radius:100px;margin-left:.45rem;vertical-align:middle}
 
+  /* visual comparison: page-count growth bars */
+  .cmpvis{max-width:840px;margin:0 auto}
+  .grow{display:grid;gap:1rem;margin-bottom:clamp(2.4rem,5vw,3.4rem)}
+  .grow__row{display:grid;grid-template-columns:140px 1fr;align-items:center;gap:1rem}
+  .grow__name{font-family:var(--serif);font-size:1.15rem;font-weight:600;line-height:1.05}
+  .grow__name small{display:block;font-family:var(--sans);font-size:.74rem;color:var(--stone);font-weight:400}
+  .grow__track{height:34px;background:var(--bone);border-radius:5px;overflow:hidden}
+  .grow__fill{height:100%;display:flex;align-items:center;justify-content:flex-end;padding:0 .85rem;border-radius:5px;
+    color:#fff;font-size:.82rem;white-space:nowrap;min-width:max-content}
+  .grow__fill b{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-right:.3rem}
+  .grow--f .grow__fill{background:var(--stone)}
+  .grow--s .grow__fill{background:var(--brass)}
+  .grow--p .grow__fill{background:var(--brass-dk)}
+  @media(max-width:560px){.grow__row{grid-template-columns:1fr;gap:.35rem}}
+
+  /* unified, tier-coloured sitemap */
+  .ulegend{display:flex;gap:1.7rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.6rem;font-size:.83rem;color:#4a463c}
+  .ulegend span{display:inline-flex;align-items:center;gap:.5rem}
+  .ulegend i{width:12px;height:12px;border-radius:50%}
+  .utree{font-family:var(--sans);font-size:.95rem;max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:clamp(1.3rem,3vw,1.9rem)}
+  .utree ul{list-style:none;margin:.15rem 0 .15rem .5rem;padding-left:1.2rem;border-left:1.5px solid var(--line)}
+  .utree>ul{border-left:0;margin:0;padding:0}
+  .utree li{padding:.34rem 0}
+  .utd{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--stone-lt);margin-right:.55rem;vertical-align:middle}
+  .is-std>.utd{background:var(--brass)}
+  .is-prm>.utd{background:var(--brass-dk)}
+  .utree__root{font-family:var(--serif);font-weight:600;font-size:1.2rem}
+  .utb--s,.utb--p{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;padding:.14rem .46rem;border-radius:100px;margin-left:.4rem;vertical-align:middle}
+  .utb--s{background:var(--brass)}
+  .utb--p{background:var(--brass-dk)}
+  .utree .sub{color:var(--stone);font-size:.84rem}
+  .utree .star{color:var(--brass-dk)}
+
+  /* lean tier-card checklist (replaces per-card trees) */
+  .pk__list{list-style:none;display:grid;gap:.55rem;font-size:.92rem;color:#4a463c;margin:0}
+  .pk__list li{display:flex;gap:.6rem;align-items:flex-start}
+  .pk__list li::before{content:"✓";color:var(--brass-dk);font-weight:700;flex:none}
+  .pk__list .new{color:var(--brass-dk);font-weight:600}
+  .pk__list .new::before{content:"+";color:var(--brass);font-size:1.1em;line-height:1.1}
+
   /* why it matters */
   .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
   @media(max-width:820px){.why-grid{grid-template-columns:1fr}}
@@ -255,8 +295,77 @@
   </div>
 </header>
 
+<!-- VISUAL COMPARISON -->
+<section class="section container" id="overview">
+  <div class="reveal" style="max-width:62ch;margin:0 auto 2.6rem;text-align:center">
+    <span class="eyebrow center">See Exactly What Changes</span>
+    <h2 class="h2" style="margin:1rem 0 1rem">Same craftsmanship in every tier.<br>What grows is your <em class="serif-it">reach</em>.</h2>
+    <p style="color:#4a463c">Every page is hand-built and schema-ready at all three levels. The only difference
+    is how many pages — and which page types — work to get you found. Here's the whole picture in one view.</p>
+  </div>
+
+  <div class="cmpvis reveal">
+    <!-- page-count growth -->
+    <div class="grow">
+      <div class="grow__row grow--f">
+        <div class="grow__name">Foundation<small>$3,500</small></div>
+        <div class="grow__track"><div class="grow__fill" style="width:47%"><b>14</b> pages</div></div>
+      </div>
+      <div class="grow__row grow--s">
+        <div class="grow__name">Standard ★<small>$4,500</small></div>
+        <div class="grow__track"><div class="grow__fill" style="width:63%"><b>19</b> pages</div></div>
+      </div>
+      <div class="grow__row grow--p">
+        <div class="grow__name">Premium<small>$5,500</small></div>
+        <div class="grow__track"><div class="grow__fill" style="width:100%"><b>30+</b> pages</div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.84rem;color:var(--stone);margin-bottom:clamp(2.4rem,5vw,3.4rem)">
+      <strong style="color:var(--brass-dk)">Standard</strong> adds 5 location pages ·
+      <strong style="color:var(--brass-dk)">Premium</strong> adds 10 more locations + a page for every completed project.</p>
+
+    <!-- legend -->
+    <div class="ulegend">
+      <span><i style="background:var(--stone-lt)"></i> In all three tiers</span>
+      <span><i style="background:var(--brass)"></i> Added in Standard</span>
+      <span><i style="background:var(--brass-dk)"></i> Added in Premium</span>
+    </div>
+
+    <!-- one sitemap, colour-coded by tier -->
+    <div class="utree">
+      <ul>
+        <li class="is-all"><span class="utd"></span><span class="utree__root">Home</span>
+          <ul>
+            <li class="is-all"><span class="utd"></span>About</li>
+            <li class="is-all"><span class="utd"></span>The Luxe Method <span class="sub">— your process</span></li>
+            <li class="is-all"><span class="utd"></span>Services <span class="sub">— hub + 7 service pages (incl. Kitchen <span class="star">★</span> &amp; Bath <span class="star">★</span>)</span></li>
+            <li class="is-all"><span class="utd"></span>Portfolio
+              <ul>
+                <li class="is-prm"><span class="utd"></span>Project Pages <span class="utb--p">Premium</span> <span class="sub">— one per completed build</span></li>
+              </ul>
+            </li>
+            <li class="is-all"><span class="utd"></span>FAQ</li>
+            <li class="is-all"><span class="utd"></span>Contact</li>
+            <li class="is-std"><span class="utd"></span>Locations <span class="utb--s">Standard</span>
+              <ul>
+                <li class="is-std"><span class="utd"></span>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park <span class="sub">(5 towns)</span></li>
+                <li class="is-prm"><span class="utd"></span>+ Oak Brook · Western Springs · Downers Grove · Darien · Clarendon Hills <span class="utb--p">Premium</span></li>
+                <li class="is-prm"><span class="utd"></span>+ Homer Glen · Lockport · La Grange · Glen Ellyn · Palos Park <span class="sub">(15 towns total)</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- THE 3 TIERS -->
-<section class="section container" id="tiers" style="padding-top:clamp(3rem,6vw,5rem)">
+<section class="section container" id="tiers" style="padding-top:clamp(1rem,3vw,2rem)">
+  <div class="reveal" style="max-width:60ch;margin-bottom:2rem">
+    <span class="eyebrow">Pick Your Tier</span>
+    <h2 class="h2" style="margin-top:1rem">Three ways to build it</h2>
+  </div>
   <div class="pk-grid">
 
     <!-- FOUNDATION -->
@@ -269,28 +378,15 @@
       </div>
       <div class="pk__base">The complete service architecture — every service you offer gets its own page.</div>
       <div class="pk__body">
-        <div class="pk__lbl">Site map</div>
-        <div class="tree"><ul>
-          <li class="root">Home</li>
-          <li><span class="grp">About</span></li>
-          <li><span class="grp">The Luxe Method</span> <span class="x">(process)</span></li>
-          <li><span class="grp">Services</span> <span class="x">(hub)</span>
-            <ul>
-              <li class="leaf">Custom Home Building</li>
-              <li class="leaf">Whole-Home Renovation</li>
-              <li class="leaf">Home Additions</li>
-              <li class="leaf">Kitchen Remodeling <span class="star">★</span></li>
-              <li class="leaf">Bathroom Remodeling <span class="star">★</span></li>
-              <li class="leaf">Finished Basements</li>
-              <li class="leaf">Interior Design</li>
-            </ul>
-          </li>
-          <li><span class="grp">Portfolio</span> <span class="x">(index)</span></li>
-          <li><span class="grp">FAQ</span></li>
-          <li><span class="grp">Contact</span></li>
-        </ul></div>
-        <p class="pk__note"><span class="star">★</span> Kitchen &amp; bathroom remodeling draw the highest search
-        demand in your market — they get first-class, conversion-built pages in every tier.</p>
+        <div class="pk__lbl">What you get</div>
+        <ul class="pk__list">
+          <li>Home, About &amp; The Luxe Method</li>
+          <li>7 dedicated service pages</li>
+          <li>Kitchen &amp; bath — your highest-demand searches <span class="star">★</span></li>
+          <li>Portfolio, FAQ &amp; Contact</li>
+          <li>Full schema markup + AI-ready build</li>
+        </ul>
+        <p class="pk__note">No location pages yet — you'll rank for <em>what</em> you do, not yet for <em>where</em>.</p>
       </div>
       <div class="pk__foot"><strong>Best for:</strong> a credible, premium presence that ranks for what you do — but not yet for <em>where</em> you do it.</div>
       <div class="pk__cta"><a class="btn btn--ghost" href="#contact">Start with Foundation</a></div>
@@ -307,24 +403,14 @@
       </div>
       <div class="pk__adds"><span class="k">Everything in Foundation, plus</span><b>+ 5 Location Pages</b></div>
       <div class="pk__body">
-        <div class="pk__lbl">Site map</div>
-        <div class="tree"><ul>
-          <li class="root inc">Everything in Foundation</li>
-          <li class="inc">Home · About · The Luxe Method</li>
-          <li class="inc">Services hub + 7 service pages</li>
-          <li class="inc">Portfolio · FAQ · Contact</li>
-          <li><span class="add">Locations <span class="pill">+5 new</span></span>
-            <ul>
-              <li class="leaf add">Lemont</li>
-              <li class="leaf add">Naperville</li>
-              <li class="leaf add">Burr Ridge</li>
-              <li class="leaf add">Hinsdale</li>
-              <li class="leaf add">Orland Park</li>
-            </ul>
-          </li>
-        </ul></div>
-        <p class="pk__note">A dedicated page for each of your five highest-value markets — the move every market
-        leader already made, and the one Luxe is missing today.</p>
+        <div class="pk__lbl">What you get</div>
+        <ul class="pk__list">
+          <li>Everything in Foundation</li>
+          <li class="new">5 dedicated location pages</li>
+        </ul>
+        <p class="pk__note">A real page for each of your five highest-value markets:<br>
+        <strong>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park</strong> — the move every market leader
+        already made, and the one Luxe is missing today.</p>
       </div>
       <div class="pk__foot"><strong>Best for:</strong> showing up first for "[service] in [town]" across the suburbs that book six-figure jobs. The credible local competitor.</div>
       <div class="pk__cta"><a class="btn btn--brass" href="#contact">Choose Standard</a></div>
@@ -340,27 +426,14 @@
       </div>
       <div class="pk__adds"><span class="k">Everything in Standard, plus</span><b>+ 10 Locations &amp; Project Pages</b></div>
       <div class="pk__body">
-        <div class="pk__lbl">Site map</div>
-        <div class="tree"><ul>
-          <li class="root inc">Everything in Standard</li>
-          <li class="inc">19 pages — all services + 5 locations</li>
-          <li><span class="add">Locations → 15 total <span class="pill">+10 new</span></span>
-            <ul>
-              <li class="leaf inc">Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park</li>
-              <li class="leaf add">+ Oak Brook · Western Springs · Downers Grove</li>
-              <li class="leaf add">+ Darien · Clarendon Hills · Homer Glen</li>
-              <li class="leaf add">+ Lockport · La Grange · Glen Ellyn · Palos Park</li>
-            </ul>
-          </li>
-          <li><span class="add">Portfolio → Project Pages <span class="pill">new</span></span>
-            <ul>
-              <li class="leaf add">One case-study page per completed build</li>
-              <li class="leaf">photos · specs · neighborhood · testimonial</li>
-            </ul>
-          </li>
-        </ul></div>
-        <p class="pk__note">*Page count grows with you — every finished home adds a project page, so the site
-        keeps expanding to 35, 40+ pages without another build fee.</p>
+        <div class="pk__lbl">What you get</div>
+        <ul class="pk__list">
+          <li>Everything in Standard</li>
+          <li class="new">10 more location pages — 15 towns total</li>
+          <li class="new">A project page for every completed build</li>
+        </ul>
+        <p class="pk__note">*The site grows with you — every finished home adds a project page, expanding to 35,
+        40+ pages over time with no new build fee.</p>
       </div>
       <div class="pk__foot"><strong>Best for:</strong> dominating the western suburbs and turning every completed project into a ranking asset that feeds the next lead.</div>
       <div class="pk__cta"><a class="btn btn--ghost" href="#contact">Go Premium</a></div>
