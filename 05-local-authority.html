@@ -61,29 +61,69 @@
     font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:1.05rem 2.2rem;border:1px solid var(--ivory);
     background:var(--ivory);color:var(--ink);border-radius:2px;transition:.3s ease;cursor:pointer}
   .btn-solid:hover{background:var(--brass-lt);border-color:var(--brass-lt);color:var(--ink);transform:translateY(-2px)}
+  /* Darken the shared brass button so white label text clears WCAG AA (was ~3.3:1) */
+  .btn--brass{background:var(--brass-dk);border-color:var(--brass-dk)}
+  .btn--brass:hover{background:#6f561c;border-color:#6f561c}
 
-  /* --- HERO (full-bleed) -------------------------------------- */
-  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  /* --- HERO (full-bleed, split: copy + quiz) ------------------ */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
   .hero__bg{position:absolute;inset:0;z-index:0}
   .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
   .hero__scrim{position:absolute;inset:0;z-index:1;background:
-    linear-gradient(180deg,rgba(20,19,15,.5) 0%,rgba(20,19,15,0) 24%,rgba(20,19,15,0) 40%,rgba(20,19,15,.85) 100%),
-    linear-gradient(72deg,rgba(20,19,15,.72),rgba(20,19,15,0) 62%)}
-  .hero__in{position:relative;z-index:2;width:100%;padding-block:clamp(3rem,7vw,6rem)}
-  .hero__rating{display:inline-flex;gap:.55rem;align-items:center;font-size:.84rem;letter-spacing:.03em;margin-bottom:1.4rem}
+    linear-gradient(180deg,rgba(20,19,15,.5) 0%,rgba(20,19,15,.18) 42%,rgba(20,19,15,.8) 100%),
+    linear-gradient(78deg,rgba(20,19,15,.82),rgba(20,19,15,.28) 70%)}
+  .hero__in{position:relative;z-index:2;width:100%;padding-block:clamp(6.5rem,12vh,8.5rem) clamp(3rem,7vw,5rem)}
+  .hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero__rating{display:inline-flex;gap:.55rem;align-items:center;font-size:.84rem;letter-spacing:.03em;margin-bottom:1.3rem}
   .hero__rating .stars{color:var(--brass-lt);font-size:.92rem;letter-spacing:.12em}
-  .hero h1{font-size:clamp(2.5rem,6vw,5.1rem);color:#fff;max-width:17ch;margin-bottom:1.3rem;line-height:1.01}
-  .hero__sub{font-size:clamp(1.06rem,1.6vw,1.32rem);color:rgba(246,241,231,.94);max-width:52ch;margin-bottom:2.1rem;line-height:1.6}
-  .hero__cta{display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center}
-  .hero__call{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.55rem;color:#fff}
-  .hero__call svg{width:22px;height:22px;flex:none}
-  .hero__cue{position:absolute;left:50%;bottom:1.1rem;z-index:2;transform:translateX(-50%);
-    color:rgba(255,255,255,.72);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;
-    display:flex;flex-direction:column;align-items:center;gap:.35rem}
-  .hero__cue svg{width:16px;height:16px;animation:cue 2.2s ease-in-out infinite}
-  @keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
-  @media(prefers-reduced-motion:reduce){.hero__cue svg{animation:none}}
-  @media(max-width:640px){.hero{min-height:90vh}.hero__cue{display:none}}
+  .hero h1{font-size:clamp(2.4rem,5vw,4.4rem);color:#fff;max-width:16ch;margin-bottom:1.1rem;line-height:1.02}
+  .hero__sub{font-size:clamp(1.04rem,1.5vw,1.25rem);color:rgba(246,241,231,.94);max-width:46ch;margin-bottom:1.7rem;line-height:1.6}
+  .hero__calllabel{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone-lt);display:block;margin-bottom:.4rem}
+  .hero__call{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.4rem;color:#fff}
+  .hero__call svg{width:20px;height:20px;flex:none}
+  @media(max-width:880px){.hero{min-height:0}.hero__grid{grid-template-columns:1fr;gap:2.2rem}.hero__in{padding-block:6.5rem 3rem}}
+
+  /* --- Hero quiz card ----------------------------------------- */
+  .hero__form{width:100%}
+  .quiz{background:#fbf8f2;color:var(--ink);border-radius:8px;box-shadow:0 30px 70px rgba(0,0,0,.42);
+    padding:clamp(1.5rem,2.4vw,2rem);max-width:440px;margin-left:auto;width:100%}
+  .quiz__head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .quiz__title{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.1}
+  .quiz__count{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6555;white-space:nowrap;font-weight:600}
+  .quiz__bar{height:4px;background:var(--bone);border-radius:100px;overflow:hidden;margin:.9rem 0 1.4rem}
+  .quiz__bar span{display:block;height:100%;width:33%;background:var(--brass-dk);border-radius:100px;transition:width .35s ease}
+  .quiz__step{border:0;padding:0;margin:0;min-width:0}
+  .quiz__step:not([hidden]){animation:qin .3s ease}
+  @keyframes qin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.quiz__step:not([hidden]){animation:none}}
+  .quiz__q{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:1rem;line-height:1.2;padding:0;float:none}
+  .quiz__opts{display:grid;gap:.55rem}
+  .quiz__opt{display:flex;align-items:center;justify-content:space-between;gap:.6rem;width:100%;text-align:left;
+    padding:.85rem 1rem;border:1px solid #cfc6b2;border-radius:4px;background:#fff;color:var(--ink);cursor:pointer;
+    font-family:var(--sans);font-size:.95rem;transition:.18s ease}
+  .quiz__opt:hover{border-color:var(--brass-dk);background:#fffdf9}
+  .quiz__opt[aria-pressed="true"]{border-color:var(--brass-dk);background:rgba(176,141,76,.14);font-weight:600}
+  .quiz__opt::after{content:"→";color:var(--brass-dk);opacity:0;transition:.18s}
+  .quiz__opt:hover::after{opacity:1}
+  .quiz__chosen{font-size:.74rem;color:#6b6555;margin:-.2rem 0 1rem}
+  .quiz__chosen b{color:var(--brass-dk)}
+  .quiz__field{margin-bottom:.85rem}
+  .quiz__field label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#3a352b;margin-bottom:.35rem}
+  .quiz__field label .rq{color:#9a3b30}
+  .quiz__field input{width:100%;padding:.8rem .9rem;border:1px solid #7e7868;border-radius:3px;font-family:var(--sans);font-size:1rem;background:#fff;color:var(--ink)}
+  .quiz__field input::placeholder{color:#6f6a5c}
+  .quiz__field input:focus{border-color:var(--brass-dk)}
+  .quiz__row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .quiz__nav{display:flex;align-items:center;gap:1rem;margin-top:1.2rem}
+  .quiz__back{background:none;border:0;color:#6b6555;font-family:var(--sans);font-size:.8rem;cursor:pointer;padding:.4rem .2rem;text-decoration:underline}
+  .quiz__back:hover{color:var(--ink)}
+  .quiz__submit{flex:1;justify-content:center;margin:0}
+  .quiz__done{text-align:center;padding:1.6rem .5rem}
+  .quiz__done svg{width:46px;height:46px;stroke:var(--brass-dk);fill:none;stroke-width:1.7;margin-bottom:.7rem}
+  .quiz__done h3{font-size:1.5rem;margin-bottom:.5rem}
+  .quiz__done p{color:#46413a;font-size:.95rem}
+  .hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+  @media(max-width:880px){.quiz{margin:0 auto;max-width:500px}}
 
   /* --- Thin trust strip --------------------------------------- */
   .tstrip{background:var(--charcoal);color:var(--ivory)}
@@ -115,19 +155,20 @@
   @media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.stats__c:nth-child(2){border-right:0}
     .stats__c:nth-child(1),.stats__c:nth-child(2){border-bottom:1px solid var(--line)}}
 
-  /* --- Services (photo-led) ----------------------------------- */
+  /* --- Services (photo-led) — selectors scoped to .svcs so the bare .svc
+         token can't collide with the shared gallery's <span class="svc"> --- */
   .svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .svc{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--bone);color:#fff;margin:0}
-  .svc img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
-  .svc:hover img{transform:scale(1.05)}
-  .svc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,15,.04) 28%,rgba(20,19,15,.5) 64%,rgba(20,19,15,.88))}
+  .svcs .svc{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--bone);color:#fff;margin:0}
+  .svcs .svc img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .svcs .svc:hover img{transform:scale(1.05)}
+  .svcs .svc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,15,.04) 28%,rgba(20,19,15,.5) 64%,rgba(20,19,15,.88))}
   .svc__cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1.4rem 1.5rem 1.6rem}
   .svc__tag{display:inline-block;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
     color:var(--ink);background:var(--brass-lt);padding:.24rem .6rem;border-radius:100px;margin-bottom:.7rem}
   .svc__n{font-family:var(--serif);font-weight:500;font-size:1.65rem;line-height:1.05;color:#fff;margin:0}
   .svc__d{font-size:.86rem;color:rgba(246,241,231,.92);margin-top:.45rem;max-width:36ch;line-height:1.5}
   @media(max-width:860px){.svcs{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.svcs{grid-template-columns:1fr}.svc{aspect-ratio:16/11}}
+  @media(max-width:520px){.svcs{grid-template-columns:1fr}.svcs .svc{aspect-ratio:16/11}}
 
   /* --- Featured testimonial band (full-bleed) ----------------- */
   .feat{position:relative;color:#fff;overflow:hidden}
@@ -346,20 +387,83 @@
   <div class="hero__bg"><img src="images/lux-hero.jpg" alt="Luxe Development custom stone home at dusk with warm-lit windows and manicured landscaping in Chicago's western suburbs" width="1376" height="768" fetchpriority="high"></div>
   <div class="hero__scrim"></div>
   <div class="container hero__in">
-    <p class="hero__rating"><span class="stars">★★★★★</span> <span><b>5.0</b> on Google · Lemont, IL</span></p>
-    <h1>Custom homes for the way you actually live.</h1>
-    <p class="hero__sub">A design-build studio crafting one-of-a-kind homes and luxury renovations across
-    Chicago's western suburbs — architecture, engineering and construction under one roof.</p>
-    <div class="hero__cta">
-      <a class="btn-solid" href="#contact">Request a Consultation</a>
-      <a class="hero__call" href="tel:+13124450727">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l2-3-5-2-2 2c-3-1-6-4-7-7l2-2-2-5z"/></svg>
-        (312) 445-0727</a>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="hero__rating"><span class="stars">★★★★★</span> <span><b>5.0</b> on Google · Lemont, IL</span></p>
+        <h1>Custom homes for the way you actually live.</h1>
+        <p class="hero__sub">A design-build studio crafting one-of-a-kind homes and luxury renovations across
+        Chicago's western suburbs — architecture, engineering and construction under one roof.</p>
+        <div>
+          <span class="hero__calllabel">Prefer to talk?</span>
+          <a class="hero__call" href="tel:+13124450727">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l2-3-5-2-2 2c-3-1-6-4-7-7l2-2-2-5z"/></svg>
+            (312) 445-0727</a>
+        </div>
+      </div>
+
+      <!-- HERO QUIZ -->
+      <div class="hero__form reveal">
+        <form class="quiz" id="quizForm" aria-label="Get your free consultation in three steps" novalidate>
+          <div class="quiz__body">
+            <div class="quiz__head">
+              <span class="quiz__title">Start your project</span>
+              <span class="quiz__count" id="quizCount" aria-live="polite">Step 1 of 3</span>
+            </div>
+            <div class="quiz__bar" aria-hidden="true"><span id="quizBar"></span></div>
+
+            <fieldset class="quiz__step" data-step="0">
+              <legend class="quiz__q">What are you planning?</legend>
+              <div class="quiz__opts">
+                <button type="button" class="quiz__opt" data-field="project" data-val="New custom home">New custom home</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Whole-home renovation">Whole-home renovation</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Addition / expansion">Addition / expansion</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Kitchen remodel">Kitchen remodel</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Bathroom remodel">Bathroom remodel</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Finished basement">Finished basement</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="1" hidden>
+              <legend class="quiz__q">What's your timeline?</legend>
+              <div class="quiz__opts">
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="As soon as possible">As soon as possible</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="1–3 months">1–3 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="3–6 months">3–6 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="6–12 months">6–12 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="Just exploring">Just exploring</button>
+              </div>
+              <div class="quiz__nav"><button type="button" class="quiz__back">← Back</button></div>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="2" hidden>
+              <legend class="quiz__q">Where should we send your details?</legend>
+              <p class="quiz__chosen" id="quizChosen"></p>
+              <div class="quiz__field"><label for="quiz-name">Full name <span class="rq" aria-hidden="true">*</span></label><input id="quiz-name" name="name" type="text" autocomplete="name" required aria-required="true"></div>
+              <div class="quiz__field"><label for="quiz-email">Email <span class="rq" aria-hidden="true">*</span></label><input id="quiz-email" name="email" type="email" autocomplete="email" required aria-required="true"></div>
+              <div class="quiz__row">
+                <div class="quiz__field"><label for="quiz-phone">Phone <span class="rq" aria-hidden="true">*</span></label><input id="quiz-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true"></div>
+                <div class="quiz__field"><label for="quiz-city">City <span class="rq" aria-hidden="true">*</span></label><input id="quiz-city" name="city" type="text" autocomplete="address-level2" required aria-required="true"></div>
+              </div>
+              <!-- Honeypot: off-screen and hidden from assistive tech; bots fill it, humans don't -->
+              <div class="hp" aria-hidden="true"><label>Company website (leave blank)<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+              <input type="hidden" name="project" id="quiz-project">
+              <input type="hidden" name="timeline" id="quiz-timeline">
+              <div class="quiz__nav">
+                <button type="button" class="quiz__back">← Back</button>
+                <button type="submit" class="btn btn--brass quiz__submit">Get My Consultation →</button>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="quiz__done" id="quizDone" hidden tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <h3>Thank you — request received.</h3>
+            <p>We'll reach out within one business day to schedule your complimentary site walkthrough.</p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-  <span class="hero__cue" aria-hidden="true">Explore
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-  </span>
 </section>
 
 <!-- TRUST STRIP -->
@@ -656,6 +760,48 @@
     /* safety net: content must never stay hidden if the observer misfires */
     setTimeout(showAll,3000);
   } else { showAll(); }
+
+  /* Hero quiz: 3-step stepper with honeypot spam guard */
+  (function(){
+    var form=document.getElementById('quizForm'); if(!form) return;
+    var steps=Array.prototype.slice.call(form.querySelectorAll('.quiz__step'));
+    var count=document.getElementById('quizCount'), bar=document.getElementById('quizBar');
+    var chosen=document.getElementById('quizChosen'), done=document.getElementById('quizDone');
+    var body=form.querySelector('.quiz__body');
+    var data={project:'',timeline:''}, cur=0;
+    function go(i){
+      cur=Math.max(0,Math.min(steps.length-1,i));
+      steps.forEach(function(s,idx){ s.hidden=idx!==cur; });
+      count.textContent='Step '+(cur+1)+' of '+steps.length;
+      bar.style.width=((cur+1)/steps.length*100)+'%';
+      if(cur===steps.length-1 && chosen){ chosen.innerHTML='<b>'+data.project+'</b> · '+data.timeline; }
+      var lg=steps[cur].querySelector('.quiz__q');
+      if(lg){ lg.setAttribute('tabindex','-1'); try{ lg.focus({preventScroll:true}); }catch(e){} }
+    }
+    form.querySelectorAll('.quiz__opt').forEach(function(btn){
+      btn.setAttribute('aria-pressed','false');
+      btn.addEventListener('click',function(){
+        var f=btn.getAttribute('data-field'), v=btn.getAttribute('data-val');
+        data[f]=v;
+        var hid=document.getElementById('quiz-'+f); if(hid) hid.value=v;
+        var sibs=btn.parentNode.querySelectorAll('.quiz__opt');
+        Array.prototype.forEach.call(sibs,function(b){ b.setAttribute('aria-pressed', b===btn?'true':'false'); });
+        go(cur+1);
+      });
+    });
+    form.querySelectorAll('.quiz__back').forEach(function(b){ b.addEventListener('click',function(){ go(cur-1); }); });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.hp input');
+      if(hp && hp.value){ return false; }           /* honeypot tripped — silently drop */
+      var req=['quiz-name','quiz-email','quiz-phone','quiz-city'], el;
+      for(var i=0;i<req.length;i++){ el=document.getElementById(req[i]); if(!el.value.trim()){ el.focus(); return false; } }
+      /* demo: show success state in place of a real POST */
+      body.hidden=true; done.hidden=false; count.textContent='Done';
+      try{ done.focus(); }catch(e){}
+      return false;
+    });
+  })();
 </script>
 <script src="luxe.js"></script>
 <script type="application/ld+json">
