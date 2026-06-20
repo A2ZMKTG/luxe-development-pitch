@@ -159,18 +159,24 @@
     .stats__c:nth-child(1),.stats__c:nth-child(2){border-bottom:1px solid var(--line)}}
 
   /* --- What We Build (alternating editorial rows) ------------- */
-  .altrows{display:grid;gap:clamp(2.4rem,5vw,4.5rem)}
-  .altrow{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+  .altrows{display:grid;gap:clamp(3rem,6vw,5.5rem);counter-reset:svc}
+  .altrow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,5vw,4rem);align-items:center;counter-increment:svc}
   .altrow:nth-child(even) .altrow__media{order:2}
-  .altrow__media{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/3;background:var(--bone);margin:0}
-  .altrow__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-  .altrow:hover .altrow__media img{transform:scale(1.04)}
-  .altrow__n{font-family:var(--serif);font-size:1rem;color:#6c5420;letter-spacing:.04em}
-  .altrow__tag{display:inline-block;margin-left:.7rem;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;
+  .altrow__media{position:relative;overflow:hidden;border-radius:6px;aspect-ratio:4/3;background:var(--bone);margin:0;
+    box-shadow:0 24px 56px rgba(20,19,15,.13)}
+  .altrow__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}
+  .altrow:hover .altrow__media img{transform:scale(1.05)}
+  .altrow__num{font-family:var(--serif);font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:600;line-height:.85;
+    color:transparent;-webkit-text-stroke:1px var(--brass);display:block;margin-bottom:.5rem}
+  .altrow__num::before{content:counter(svc,decimal-leading-zero)}
+  .altrow__n{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#6c5420;font-weight:600;margin-bottom:.6rem}
+  .altrow__tag{display:inline-block;margin-left:.6rem;font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;
     font-weight:700;color:var(--ink);background:var(--brass-lt);padding:.22rem .55rem;border-radius:100px;vertical-align:middle}
-  .altrow h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.05;margin:.5rem 0 .7rem}
-  .altrow p{color:#46413a;font-size:1rem;line-height:1.6;max-width:46ch}
-  @media(max-width:760px){.altrow{grid-template-columns:1fr;gap:1.2rem}.altrow:nth-child(even) .altrow__media{order:0}.altrow__media{aspect-ratio:16/10}}
+  .altrow h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.04;margin:0 0 .8rem}
+  .altrow h3::after{content:"";display:block;width:48px;height:2px;background:var(--brass);margin-top:.9rem}
+  .altrow p{color:#46413a;font-size:1.05rem;line-height:1.65;max-width:48ch}
+  @media(max-width:760px){.altrow{grid-template-columns:1fr;gap:1.3rem}.altrow:nth-child(even) .altrow__media{order:0}
+    .altrow__media{aspect-ratio:16/10}.altrow__num{font-size:2.4rem}}
 
   /* --- Featured testimonial band (full-bleed) ----------------- */
   .feat{position:relative;color:#fff;overflow:hidden}
@@ -183,17 +189,35 @@
   .feat__who b{color:#fff;font-weight:600}
   .feat__who .stars{color:var(--brass-lt);letter-spacing:.1em;margin-left:.6rem}
 
-  /* --- The Luxe Method (progress timeline) -------------------- */
-  .tl{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.2rem);position:relative;margin:0;padding:0}
-  .tl::before{content:"";position:absolute;top:19px;left:9%;right:9%;height:1px;background:var(--line-dk);z-index:0}
-  .tl__c{position:relative;z-index:1;text-align:center}
-  .tl__node{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brass-dk);
-    color:#fff;font-family:var(--serif);font-size:1rem;font-weight:600;margin:0 auto 1.3rem;border:4px solid var(--ink)}
-  .tl__img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;margin-bottom:1.1rem}
-  .tl__c h3{color:#fff;font-size:1.22rem;font-weight:500;margin-bottom:.45rem}
-  .tl__c p{color:var(--stone-lt);font-size:.86rem;line-height:1.55}
-  @media(max-width:780px){.tl{grid-template-columns:1fr 1fr;gap:2rem}.tl::before{display:none}}
-  @media(max-width:480px){.tl{grid-template-columns:1fr}}
+  /* --- The Luxe Method (vertical alternating timeline) -------- */
+  .vtl{position:relative;max-width:1000px;margin:0 auto}
+  .vtl::before{content:"";position:absolute;left:50%;top:10px;bottom:10px;width:2px;background:var(--line-dk);transform:translateX(-50%)}
+  .vtl__step{position:relative;margin-bottom:clamp(2.6rem,5vw,4.5rem)}
+  .vtl__step:last-child{margin-bottom:0}
+  .vtl__node{position:absolute;left:50%;top:1.5rem;transform:translateX(-50%);z-index:2;width:48px;height:48px;border-radius:50%;
+    background:var(--brass-dk);border:4px solid var(--ink);color:#fff;display:grid;place-items:center;
+    font-family:var(--serif);font-size:1.05rem;font-weight:600}
+  .vtl__card{position:relative;width:calc(50% - 2.6rem);background:var(--charcoal);border:1px solid var(--line-dk);
+    border-radius:8px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+  .vtl__step:nth-child(odd) .vtl__card{margin-right:auto}
+  .vtl__step:nth-child(even) .vtl__card{margin-left:auto}
+  .vtl__img{width:100%;aspect-ratio:16/9;object-fit:cover}
+  .vtl__c{padding:1.3rem 1.5rem 1.6rem}
+  .vtl__kick{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
+  .vtl__card h3{color:#fff;font-size:1.45rem;font-weight:500;margin:.4rem 0 .55rem}
+  .vtl__card p{color:var(--stone-lt);font-size:.92rem;line-height:1.6}
+  /* directional scroll-in (more specific than shared .reveal so it wins) */
+  .js .vtl__step:nth-child(odd) .vtl__card{transform:translateX(-34px)}
+  .js .vtl__step:nth-child(even) .vtl__card{transform:translateX(34px)}
+  .js .vtl__step .vtl__card.in{transform:none}
+  @media(max-width:720px){
+    .vtl::before{left:21px}
+    .vtl__node{left:21px;width:42px;height:42px;font-size:.95rem}
+    .vtl__step:nth-child(odd) .vtl__card,.vtl__step:nth-child(even) .vtl__card{width:auto;margin:0 0 0 56px}
+    .js .vtl__step:nth-child(odd) .vtl__card,.js .vtl__step:nth-child(even) .vtl__card{transform:translateY(26px)}
+    .js .vtl__step .vtl__card.in{transform:none}
+  }
+  @media(prefers-reduced-motion:reduce){.js .vtl__step .vtl__card{transform:none}}
 
   /* --- Reviews (Google-style widget) -------------------------- */
   .gwidget{max-width:980px;margin:0 auto;background:#fff;border:1px solid #e3ddcf;border-radius:12px;overflow:hidden;box-shadow:0 16px 44px rgba(20,19,15,.06)}
@@ -216,12 +240,23 @@
   .greview p{font-size:.9rem;color:#3a352b;line-height:1.6}
   @media(max-width:760px){.greviews{grid-template-columns:1fr}.greview{border-right:0;border-bottom:1px solid #ece7da}.greview:last-child{border-bottom:0}}
 
-  /* --- Service area ------------------------------------------- */
-  .area{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-  .area__list{columns:3;column-gap:1.6rem;font-size:.92rem}
-  .area__list a{display:block;padding:.5rem 0;border-bottom:1px solid var(--line);color:#3a352b;transition:.2s}
-  .area__list a:hover{color:#6c5420;padding-left:.35rem}
-  @media(max-width:820px){.area{grid-template-columns:1fr}.area__list{columns:2}}
+  /* --- Service area (standout dark band) ---------------------- */
+  .areastats{display:flex;justify-content:center;gap:clamp(1.6rem,5vw,3.8rem);flex-wrap:wrap;margin:1.7rem 0 0}
+  .areastats div{text-align:center}
+  .areastats b{font-family:var(--serif);color:var(--brass-lt);font-size:1.8rem;font-weight:600;display:block;line-height:1}
+  .areastats span{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-lt);display:block;margin-top:.4rem}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;max-width:900px;margin:0 auto}
+  .chip{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line-dk);border-radius:100px;
+    padding:.5rem 1.05rem;font-size:.88rem;color:var(--ivory);background:rgba(255,255,255,.02);transition:.2s}
+  .chip:hover{border-color:var(--brass);background:rgba(176,141,76,.14);transform:translateY(-2px)}
+  .chip svg{width:13px;height:13px;stroke:var(--brass-lt);fill:none;stroke-width:1.8;flex:none}
+  .chip--hq{background:var(--brass);border-color:var(--brass);color:#fff;font-weight:600}
+  .chip--hq svg{stroke:#fff}
+  .chips--sub{margin-top:1.2rem;max-width:840px}
+  .chips--sub .chip{font-size:.8rem;padding:.42rem .9rem;color:var(--stone-lt);border-color:rgba(246,241,231,.1)}
+  .chips--sub .chip:hover{color:var(--ivory);border-color:var(--brass)}
+  .area__more{text-align:center;margin-top:2rem;color:var(--stone-lt);font-size:.92rem}
+  .area__more a{color:var(--brass-lt);text-decoration:underline;text-underline-offset:3px}
 
   /* --- Contact ------------------------------------------------ */
   .contact{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -540,7 +575,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/facade-day.jpg" alt="Completed custom home exterior built by Luxe Development" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">01 — New Construction</span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">New Construction</span>
           <h3>Custom Homes</h3>
           <p>Ground-up architecture, engineering and construction, fully in-house — a one-of-one home designed around how your family actually lives, then built by the same team that drew it.</p>
         </div>
@@ -548,7 +584,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/great-room.jpg" alt="Renovated great room with custom millwork and natural light" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">02 — Renovation</span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">Renovation</span>
           <h3>Whole-Home Renovation</h3>
           <p>Keep the address you love and rebuild the home to a new standard — reworked layouts, new systems and finishes that feel original, not added on.</p>
         </div>
@@ -556,7 +593,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/architect-modern.jpg" alt="Modern home addition with clean architectural lines" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">03 — Expansion</span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">Expansion</span>
           <h3>Additions &amp; Expansions</h3>
           <p>Second stories, primary-suite wings and family-room additions, engineered and detailed to look like they were always part of the house.</p>
         </div>
@@ -564,7 +602,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/kitchen.jpg" alt="Luxury custom kitchen with marble island and brass detailing" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">04 — Renovation <span class="altrow__tag">Most requested</span></span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">Renovation <span class="altrow__tag">Most requested</span></span>
           <h3>Luxury Kitchens</h3>
           <p>The room that sells the home and runs your family — custom cabinetry, stone and lighting detailed to the millimeter.</p>
         </div>
@@ -572,7 +611,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/primary-bath.jpg" alt="Spa-style primary bathroom in marble and brass with natural light" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">05 — Renovation <span class="altrow__tag">Most requested</span></span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">Renovation <span class="altrow__tag">Most requested</span></span>
           <h3>Spa Bathrooms</h3>
           <p>Marble, brass and daylight executed like fine cabinetry — primary baths that feel like the best hotel you've ever stayed in.</p>
         </div>
@@ -580,7 +620,8 @@
       <article class="altrow reveal">
         <figure class="altrow__media"><img src="images/basement-lounge.jpg" alt="Finished lower-level lounge with custom bar and theater seating" loading="lazy"></figure>
         <div>
-          <span class="altrow__n">06 — Lower Level</span>
+          <span class="altrow__num" aria-hidden="true"></span>
+          <span class="altrow__n">Lower Level</span>
           <h3>Finished Basements</h3>
           <p>Wine rooms, theaters, gyms and lounges that feel original to the home — not an afterthought below it.</p>
         </div>
@@ -611,32 +652,40 @@
       <p style="color:var(--stone-lt);margin-top:1rem">Four stages, one team, zero handoffs — the same path on a
       new kitchen as on a new home.</p>
     </div>
-    <ol class="tl reveal">
-      <li class="tl__c">
-        <span class="tl__node">01</span>
-        <img class="tl__img" src="images/architect-modern.jpg" alt="Architectural and structural design stage" loading="lazy">
-        <h3>Vision &amp; Architecture</h3>
-        <p>We listen, walk the site, and let design and engineering define a realistic build before a dollar is committed.</p>
-      </li>
-      <li class="tl__c">
-        <span class="tl__node">02</span>
-        <img class="tl__img" src="images/kitchen.jpg" alt="Selecting finishes, fixtures and materials" loading="lazy">
-        <h3>Bespoke Curation</h3>
-        <p>Finishes, fixtures and budget are selected and locked early — so the number you approve is the number we hold.</p>
-      </li>
-      <li class="tl__c">
-        <span class="tl__node">03</span>
-        <img class="tl__img" src="images/facade-day.jpg" alt="In-house construction supervised on site" loading="lazy">
-        <h3>Master Construction</h3>
-        <p>Our own crews build it, supervised on site daily, with milestone walk-throughs that keep you ahead of every decision.</p>
-      </li>
-      <li class="tl__c">
-        <span class="tl__node">04</span>
-        <img class="tl__img" src="images/lux-greatroom.jpg" alt="Finished home delivered at white-glove handover" loading="lazy">
-        <h3>White-Glove Handover</h3>
-        <p>A detailed final walk-through, a punch list closed to zero, and a home delivered exactly as drawn.</p>
-      </li>
-    </ol>
+    <div class="vtl">
+      <div class="vtl__step">
+        <span class="vtl__node">01</span>
+        <div class="vtl__card reveal">
+          <img class="vtl__img" src="images/architect-modern.jpg" alt="Architectural and structural design stage" loading="lazy">
+          <div class="vtl__c"><span class="vtl__kick">Step One</span><h3>Vision &amp; Architecture</h3>
+            <p>We listen, walk the site, and let design and engineering define a realistic build before a dollar is committed.</p></div>
+        </div>
+      </div>
+      <div class="vtl__step">
+        <span class="vtl__node">02</span>
+        <div class="vtl__card reveal">
+          <img class="vtl__img" src="images/kitchen.jpg" alt="Selecting finishes, fixtures and materials" loading="lazy">
+          <div class="vtl__c"><span class="vtl__kick">Step Two</span><h3>Bespoke Curation</h3>
+            <p>Finishes, fixtures and budget are selected and locked early — so the number you approve is the number we hold.</p></div>
+        </div>
+      </div>
+      <div class="vtl__step">
+        <span class="vtl__node">03</span>
+        <div class="vtl__card reveal">
+          <img class="vtl__img" src="images/facade-day.jpg" alt="In-house construction supervised on site" loading="lazy">
+          <div class="vtl__c"><span class="vtl__kick">Step Three</span><h3>Master Construction</h3>
+            <p>Our own crews build it, supervised on site daily, with milestone walk-throughs that keep you ahead of every decision.</p></div>
+        </div>
+      </div>
+      <div class="vtl__step">
+        <span class="vtl__node">04</span>
+        <div class="vtl__card reveal">
+          <img class="vtl__img" src="images/lux-greatroom.jpg" alt="Finished home delivered at white-glove handover" loading="lazy">
+          <div class="vtl__c"><span class="vtl__kick">Step Four</span><h3>White-Glove Handover</h3>
+            <p>A detailed final walk-through, a punch list closed to zero, and a home delivered exactly as drawn.</p></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -714,23 +763,44 @@
 </section>
 
 <!-- SERVICE AREA -->
-<section class="section container" id="area">
-  <div class="area">
-    <div class="reveal">
-      <span class="eyebrow">Service Area</span>
-      <h2 class="h2" style="margin:1rem 0 1rem">Building across<br>Chicago's western suburbs</h2>
-      <p style="color:#46413a;margin-bottom:1.5rem">Based in Lemont, we build and renovate throughout DuPage,
-      Cook and Will County's most established communities. Don't see your town? Just ask — we likely serve it.</p>
-      <a class="btn" href="#contact">Check My Address</a>
+<section class="section bg-ink is-dark" id="area">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol></svg>
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:62ch;margin:0 auto">
+      <span class="eyebrow center on-dark">Service Area</span>
+      <h2 class="h2" style="color:#fff;margin-top:1rem">Building across Chicago's western suburbs</h2>
+      <p style="color:var(--stone-lt);margin-top:1rem">Designing and building for the most established communities
+      across DuPage, Cook &amp; Will County — from our home base in Lemont.</p>
+      <div class="areastats">
+        <div><b>25+</b><span>Communities</span></div>
+        <div><b>3</b><span>Counties</span></div>
+        <div><b>1</b><span>Accountable team</span></div>
+      </div>
     </div>
-    <div class="area__list reveal">
-      <a href="#contact">Lemont</a><a href="#contact">Hinsdale</a><a href="#contact">Oak Brook</a><a href="#contact">Burr Ridge</a>
-      <a href="#contact">Western Springs</a><a href="#contact">Clarendon Hills</a><a href="#contact">Downers Grove</a><a href="#contact">Darien</a>
-      <a href="#contact">Willowbrook</a><a href="#contact">Naperville</a><a href="#contact">Lisle</a><a href="#contact">Wheaton</a>
-      <a href="#contact">Glen Ellyn</a><a href="#contact">Elmhurst</a><a href="#contact">La Grange</a><a href="#contact">La Grange Park</a>
-      <a href="#contact">Homer Glen</a><a href="#contact">Orland Park</a><a href="#contact">Palos Park</a><a href="#contact">Lockport</a>
-      <a href="#contact">Frankfort</a><a href="#contact">Hickory Hills</a><a href="#contact">Willow Springs</a><a href="#contact">Countryside</a>
+
+    <div class="chips reveal" style="margin-top:2.4rem">
+      <a class="chip chip--hq" href="#contact"><svg><use href="#pin"/></svg> Lemont — HQ</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Hinsdale</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Oak Brook</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Burr Ridge</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Naperville</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Western Springs</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Clarendon Hills</a>
+      <a class="chip" href="#contact"><svg><use href="#pin"/></svg> Downers Grove</a>
     </div>
+
+    <div class="chips chips--sub reveal">
+      <a class="chip" href="#contact">Darien</a><a class="chip" href="#contact">Willowbrook</a>
+      <a class="chip" href="#contact">Lisle</a><a class="chip" href="#contact">Wheaton</a>
+      <a class="chip" href="#contact">Glen Ellyn</a><a class="chip" href="#contact">Elmhurst</a>
+      <a class="chip" href="#contact">La Grange</a><a class="chip" href="#contact">La Grange Park</a>
+      <a class="chip" href="#contact">Homer Glen</a><a class="chip" href="#contact">Orland Park</a>
+      <a class="chip" href="#contact">Palos Park</a><a class="chip" href="#contact">Lockport</a>
+      <a class="chip" href="#contact">Frankfort</a><a class="chip" href="#contact">Hickory Hills</a>
+      <a class="chip" href="#contact">Willow Springs</a><a class="chip" href="#contact">Countryside</a>
+    </div>
+
+    <p class="area__more reveal">Don't see your town? <a href="#contact">Just ask</a> — we likely serve it.</p>
   </div>
 </section>
 
