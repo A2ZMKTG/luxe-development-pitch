@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className+=' js';</script>
 <link rel="canonical" href="https://luxe-development-pitch.vercel.app/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#14130F">
@@ -14,71 +15,255 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Luxe Development">
-<meta property="og:locale" content="en_US"><meta property="og:title" content="Luxe Development — A Better Website, Built to Rank | A2Z MKTG Proposal">
-<meta property="og:description" content="A2Z MKTG proposal for Luxe Development: 7 homepage concepts, the #1 ranking strategy, and 3 build packages."><meta property="og:url" content="https://luxe-development-pitch.vercel.app/">
+<meta property="og:locale" content="en_US"><meta property="og:title" content="Luxe Development | Custom Home Builder &amp; Remodeler — Lemont &amp; Chicago's Western Suburbs">
+<meta property="og:description" content="Award-quality custom homes, additions &amp; luxury remodels in Lemont, Hinsdale, Oak Brook, Naperville &amp; 20+ western suburbs. Rated 5.0 on Google. Free site walkthrough — (312) 445-0727."><meta property="og:url" content="https://luxe-development-pitch.vercel.app/">
 <meta property="og:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Luxe Development luxury custom home at dusk">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Luxe Development — A Better Website, Built to Rank | A2Z MKTG Proposal">
-<meta name="twitter:description" content="A2Z MKTG proposal for Luxe Development: 7 homepage concepts, the #1 ranking strategy, and 3 build packages."><meta name="twitter:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg">
-<title>Luxe Development — A Better Website, Built to Rank | A2Z MKTG Proposal</title>
-<meta name="description" content="A2Z MKTG proposal for Luxe Development: 7 homepage concepts, the #1 ranking strategy, and 3 build packages.">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Luxe Development | Custom Home Builder &amp; Remodeler — Lemont &amp; Chicago's Western Suburbs">
+<meta name="twitter:description" content="Award-quality custom homes, additions &amp; luxury remodels in Lemont, Hinsdale, Oak Brook, Naperville &amp; 20+ western suburbs. Rated 5.0 on Google. Free site walkthrough — (312) 445-0727."><meta name="twitter:image" content="https://luxe-development-pitch.vercel.app/images/og-luxe.jpg">
+<title>Luxe Development | Custom Home Builder &amp; Remodeler — Lemont &amp; Chicago's Western Suburbs</title>
+<meta name="description" content="Award-quality custom homes, additions &amp; luxury remodels in Lemont, Hinsdale, Oak Brook, Naperville &amp; 20+ western suburbs. Rated 5.0 on Google. Free site walkthrough — (312) 445-0727.">
+<link rel="preload" as="image" href="images/lux-hero.jpg" fetchpriority="high">
 <link rel="stylesheet" href="luxe-system.css">
 <style>
-  body{background:var(--ink);color:var(--ivory)}
-  .ix-hero{padding:clamp(3.5rem,8vw,6rem) var(--pad) clamp(2rem,4vw,3rem);max-width:var(--maxw);margin:0 auto}
-  .ix-hero .kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-lt);font-weight:500}
-  .ix-hero h1{font-size:clamp(2.5rem,6.4vw,5rem);color:#fff;margin:1rem 0;line-height:1.0}
-  .ix-hero h1 em{font-style:italic;color:var(--brass-lt)}
-  .ix-hero p{max-width:60ch;color:rgba(246,241,231,.75);font-size:1.15rem}
-  .ix-jump{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
-  .ix-jump a{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.8rem 1.3rem;
-    border:1px solid var(--line-dk);border-radius:100px;transition:.3s;color:#cfc7b6}
-  .ix-jump a:hover{background:var(--brass);border-color:var(--brass);color:#fff}
-  .ix-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.8rem;font-size:.82rem;color:var(--stone-lt);
-    border-top:1px solid var(--line-dk);padding-top:1.4rem}
-  .ix-meta b{color:#fff;font-weight:600}
+  /* ============================================================
+     V5 · LOCAL AUTHORITY — production homepage
+     Photo-first · WCAG 2.2 AA · page-scoped (shared system untouched)
+     ============================================================ */
 
-  .sec-lbl{max-width:var(--maxw);margin:0 auto;padding:2rem var(--pad) 0;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1rem}
-  .sec-lbl h2{font-size:clamp(1.6rem,3vw,2.4rem);color:#fff}
-  .sec-lbl span{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt)}
+  /* --- Accessibility foundations ------------------------------ */
+  .skip{position:absolute;left:1rem;top:-3.5rem;z-index:300;background:var(--ink);color:#fff;
+    padding:.75rem 1.2rem;border-radius:4px;font-size:.8rem;letter-spacing:.04em;transition:top .2s}
+  .skip:focus{top:1rem}
+  /* Visible keyboard focus — the shared system removed it; restore it everywhere */
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+  textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+    outline:3px solid var(--brass-dk);outline-offset:3px;border-radius:2px}
+  .is-dark a:focus-visible,.is-dark button:focus-visible,.is-dark input:focus-visible,
+  .is-dark select:focus-visible,.is-dark summary:focus-visible{outline-color:var(--brass-lt)}
+  /* Reveal: content is visible by default; only hidden once JS is confirmed (no JS = no loss) */
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(24px);transition:.85s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important;transition:none}}
 
-  .grid{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 2rem;
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
-  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}}
-  .card{position:relative;border:1px solid var(--line-dk);border-radius:6px;overflow:hidden;background:var(--charcoal);
-    transition:.4s;display:flex;flex-direction:column}
-  .card:hover{transform:translateY(-5px);border-color:var(--brass);box-shadow:0 26px 60px rgba(0,0,0,.45)}
-  .card__img{aspect-ratio:16/10;overflow:hidden;position:relative}
-  .card__img img{width:100%;height:100%;object-fit:cover;transition:1s ease}
-  .card:hover .card__img img{transform:scale(1.05)}
-  .card__no{position:absolute;top:.9rem;left:.9rem;z-index:2;font-family:var(--serif);font-size:.9rem;
-    background:rgba(20,19,15,.7);backdrop-filter:blur(6px);border:1px solid var(--line-dk);
-    width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:var(--brass-lt)}
-  .card__body{padding:1.3rem 1.4rem 1.5rem;flex:1;display:flex;flex-direction:column}
-  .card__tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
-  .card__body h3{font-size:1.6rem;color:#fff;margin:.4rem 0 .5rem}
-  .card__body p{font-size:.88rem;color:var(--stone-lt);flex:1;line-height:1.55}
-  .card__go{margin-top:1rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--brass-lt);display:inline-flex;gap:.4rem}
-  .card__go span{transition:.3s}.card:hover .card__go span{transform:translateX(5px)}
+  /* --- AA-safe accent colors (override sub-contrast defaults on light) --- */
+  .eyebrow{color:#6c5420}
+  .is-dark .eyebrow,.eyebrow.on-dark{color:var(--brass-lt)}
 
-  /* feature blocks */
-  .feat{max-width:var(--maxw);margin:0 auto;padding:1.2rem var(--pad) 5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.3rem}
-  @media(max-width:980px){.feat{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.feat{grid-template-columns:1fr}}
-  .fcard{position:relative;border:1px solid var(--line-dk);border-radius:6px;overflow:hidden;padding:clamp(1.8rem,3vw,2.6rem);
-    background:linear-gradient(135deg,var(--charcoal),var(--ink));transition:.4s;display:flex;flex-direction:column;min-height:260px}
-  .fcard:hover{border-color:var(--brass);transform:translateY(-5px)}
-  .fcard--brass{background:linear-gradient(135deg,#3a2f1c,var(--ink))}
-  .fcard .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
-  .fcard h3{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;margin:.6rem 0 .7rem}
-  .fcard p{color:rgba(246,241,231,.78);flex:1;font-size:.96rem;max-width:46ch}
-  .fcard .btn{align-self:flex-start;margin-top:1.4rem}
+  /* --- Nav ---------------------------------------------------- */
+  .la-nav{color:#fff}
+  .la-nav.scrolled{background:rgba(20,19,15,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dk)}
+  .la-nav .nav__links a{padding:.5rem 0}
 
-  .note{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad) 5rem}
-  .note__in{background:var(--charcoal);border:1px solid var(--line-dk);border-radius:6px;padding:clamp(1.6rem,3vw,2.2rem)}
-  .note__in h4{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:.7rem}
-  .note__in p{color:var(--stone-lt);font-size:.92rem;max-width:82ch;margin-bottom:.5rem}
+  /* --- Buttons with guaranteed contrast ----------------------- */
+  .btn-solid{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.8rem;
+    font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:1.05rem 2.2rem;border:1px solid var(--ivory);
+    background:var(--ivory);color:var(--ink);border-radius:2px;transition:.3s ease;cursor:pointer}
+  .btn-solid:hover{background:var(--brass-lt);border-color:var(--brass-lt);color:var(--ink);transform:translateY(-2px)}
+  /* Darken the shared brass button so white label text clears WCAG AA (was ~3.3:1) */
+  .btn--brass{background:var(--brass-dk);border-color:var(--brass-dk)}
+  .btn--brass:hover{background:#6f561c;border-color:#6f561c}
+
+  /* --- HERO (full-bleed, split: copy + quiz) ------------------ */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero__bg{position:absolute;inset:0;z-index:0}
+  .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+  .hero__scrim{position:absolute;inset:0;z-index:1;background:
+    linear-gradient(180deg,rgba(20,19,15,.5) 0%,rgba(20,19,15,.18) 42%,rgba(20,19,15,.8) 100%),
+    linear-gradient(78deg,rgba(20,19,15,.82),rgba(20,19,15,.28) 70%)}
+  .hero__in{position:relative;z-index:2;width:100%;padding-block:clamp(6.5rem,12vh,8.5rem) clamp(3rem,7vw,5rem)}
+  .hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero__rating{display:inline-flex;gap:.55rem;align-items:center;font-size:.84rem;letter-spacing:.03em;margin-bottom:1.3rem}
+  .hero__rating .stars{color:var(--brass-lt);font-size:.92rem;letter-spacing:.12em}
+  .hero h1{font-size:clamp(2.4rem,5vw,4.4rem);color:#fff;max-width:16ch;margin-bottom:1.1rem;line-height:1.02}
+  .hero__sub{font-size:clamp(1.04rem,1.5vw,1.25rem);color:rgba(246,241,231,.94);max-width:46ch;margin-bottom:1.7rem;line-height:1.6}
+  .hero__calllabel{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone-lt);display:block;margin-bottom:.4rem}
+  .hero__call{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.4rem;color:#fff}
+  .hero__call svg{width:20px;height:20px;flex:none}
+  @media(max-width:880px){.hero{min-height:0}.hero__grid{grid-template-columns:1fr;gap:2.2rem}.hero__in{padding-block:6.5rem 3rem}}
+  .hero__bg,.hero__in{will-change:transform}                 /* JS parallax + scroll-away fade */
+  @media(prefers-reduced-motion:no-preference){.hero__copy{animation:heroup 1s .05s both cubic-bezier(.2,.7,.2,1)}}
+  @keyframes heroup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+  /* --- Hero quiz card ----------------------------------------- */
+  .hero__form{width:100%}
+  .quiz{background:#fbf8f2;color:var(--ink);border-radius:8px;box-shadow:0 30px 70px rgba(0,0,0,.42);
+    padding:clamp(1.5rem,2.4vw,2rem);max-width:440px;margin-left:auto;width:100%}
+  .quiz__head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .quiz__title{font-family:var(--serif);font-size:1.5rem;font-weight:600;line-height:1.1}
+  .quiz__count{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6555;white-space:nowrap;font-weight:600}
+  .quiz__bar{height:4px;background:var(--bone);border-radius:100px;overflow:hidden;margin:.9rem 0 1.4rem}
+  .quiz__bar span{display:block;height:100%;width:33%;background:var(--brass-dk);border-radius:100px;transition:width .35s ease}
+  .quiz__step{border:0;padding:0;margin:0;min-width:0}
+  .quiz__step:not([hidden]){animation:qin .3s ease}
+  @keyframes qin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.quiz__step:not([hidden]){animation:none}}
+  .quiz__q{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:1rem;line-height:1.2;padding:0;float:none}
+  .quiz__opts{display:grid;gap:.55rem}
+  .quiz__opt{display:flex;align-items:center;justify-content:space-between;gap:.6rem;width:100%;text-align:left;
+    padding:.85rem 1rem;border:1px solid #cfc6b2;border-radius:4px;background:#fff;color:var(--ink);cursor:pointer;
+    font-family:var(--sans);font-size:.95rem;transition:.18s ease}
+  .quiz__opt:hover{border-color:var(--brass-dk);background:#fffdf9}
+  .quiz__opt[aria-pressed="true"]{border-color:var(--brass-dk);background:rgba(176,141,76,.14);font-weight:600}
+  .quiz__opt::after{content:"→";color:var(--brass-dk);opacity:0;transition:.18s}
+  .quiz__opt:hover::after{opacity:1}
+  .quiz__chosen{font-size:.74rem;color:#6b6555;margin:-.2rem 0 1rem}
+  .quiz__chosen b{color:var(--brass-dk)}
+  .quiz__field{margin-bottom:.85rem}
+  .quiz__field label{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#3a352b;margin-bottom:.35rem}
+  .quiz__field label .rq{color:#9a3b30}
+  .quiz__field input{width:100%;padding:.8rem .9rem;border:1px solid #7e7868;border-radius:3px;font-family:var(--sans);font-size:1rem;background:#fff;color:var(--ink)}
+  .quiz__field input::placeholder{color:#6f6a5c}
+  .quiz__field input:focus{border-color:var(--brass-dk)}
+  .quiz__row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .quiz__nav{display:flex;align-items:center;gap:1rem;margin-top:1.2rem}
+  .quiz__back{background:none;border:0;color:#6b6555;font-family:var(--sans);font-size:.8rem;cursor:pointer;padding:.4rem .2rem;text-decoration:underline}
+  .quiz__back:hover{color:var(--ink)}
+  .quiz__submit{flex:1;justify-content:center;margin:0}
+  .quiz__done{text-align:center;padding:1.6rem .5rem}
+  .quiz__done svg{width:46px;height:46px;stroke:var(--brass-dk);fill:none;stroke-width:1.7;margin-bottom:.7rem}
+  .quiz__done h3{font-size:1.5rem;margin-bottom:.5rem}
+  .quiz__done p{color:#46413a;font-size:.95rem}
+  .hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+  @media(max-width:880px){.quiz{margin:0 auto;max-width:500px}}
+
+  /* --- Trust strip (elegant) ---------------------------------- */
+  .tstrip{background:var(--ink);border-top:1px solid var(--line-dk);border-bottom:1px solid var(--line-dk)}
+  .tstrip__in{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem 3rem;padding:1.7rem var(--pad)}
+  .tstrip__i{display:inline-flex;align-items:baseline;gap:.55rem;font-size:.74rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--stone-lt);white-space:nowrap}
+  .tstrip__i b{font-family:var(--serif);font-size:1.5rem;letter-spacing:0;text-transform:none;color:var(--brass-lt);font-weight:600;line-height:1}
+  .tstrip__i .stars{color:var(--brass-lt);letter-spacing:.1em;font-size:.92rem;align-self:center}
+
+  /* --- Intro / about ------------------------------------------ */
+  .intro{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.2rem,5.5vw,5rem);align-items:center}
+  .intro__media{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:var(--bone)}
+  .intro__media img{width:100%;height:100%;object-fit:cover}
+  .intro__lead{font-family:var(--serif);font-size:clamp(1.5rem,2.7vw,2.1rem);line-height:1.32;color:#2b271f;margin:1.1rem 0 1.2rem}
+  .intro p{color:#46413a}
+  .intro p+p{margin-top:1rem}
+  .sig{margin-top:1.7rem;border-top:1px solid var(--line);padding-top:1.3rem;display:flex;align-items:center;gap:1rem}
+  .sig .mk{font-family:var(--serif);font-style:italic;font-size:1.9rem;color:#6c5420;line-height:1}
+  .sig .name{font-family:var(--serif);font-size:1.3rem;line-height:1.05}
+  .sig .role{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6555}
+  @media(max-width:860px){.intro{grid-template-columns:1fr}.intro__media{aspect-ratio:3/2;max-height:460px}}
+
+  /* --- Stat row (hairlines, not boxes) ------------------------ */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(2.6rem,5vw,4.2rem)}
+  .stats__c{padding:1.7rem 1rem;text-align:center;border-right:1px solid var(--line)}
+  .stats__c:last-child{border-right:0}
+  .stats__c b{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.9rem);color:var(--ink);display:block;line-height:1;font-weight:600}
+  .stats__c span{font-size:.71rem;letter-spacing:.1em;text-transform:uppercase;color:#6b6555;margin-top:.55rem;display:block;line-height:1.4}
+  @media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.stats__c:nth-child(2){border-right:0}
+    .stats__c:nth-child(1),.stats__c:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* --- What We Build (alternating editorial rows) ------------- */
+  .altrows{display:grid;gap:clamp(2.4rem,5vw,4.5rem)}
+  .altrow{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+  .altrow:nth-child(even) .altrow__media{order:2}
+  .altrow__media{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/3;background:var(--bone);margin:0}
+  .altrow__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .altrow:hover .altrow__media img{transform:scale(1.04)}
+  .altrow__n{font-family:var(--serif);font-size:1rem;color:#6c5420;letter-spacing:.04em}
+  .altrow__tag{display:inline-block;margin-left:.7rem;font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;
+    font-weight:700;color:var(--ink);background:var(--brass-lt);padding:.22rem .55rem;border-radius:100px;vertical-align:middle}
+  .altrow h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.05;margin:.5rem 0 .7rem}
+  .altrow p{color:#46413a;font-size:1rem;line-height:1.6;max-width:46ch}
+  @media(max-width:760px){.altrow{grid-template-columns:1fr;gap:1.2rem}.altrow:nth-child(even) .altrow__media{order:0}.altrow__media{aspect-ratio:16/10}}
+
+  /* --- Featured testimonial band (full-bleed) ----------------- */
+  .feat{position:relative;color:#fff;overflow:hidden}
+  .feat__bg{position:absolute;inset:0;z-index:0}
+  .feat__bg img{width:100%;height:100%;object-fit:cover}
+  .feat__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,19,15,.9),rgba(20,19,15,.55) 66%,rgba(20,19,15,.32))}
+  .feat__in{position:relative;z-index:2;max-width:60ch;padding-block:clamp(4.5rem,10vw,8rem)}
+  .feat__q{font-family:var(--serif);font-style:italic;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.32;margin:1.1rem 0 0}
+  .feat__who{margin-top:1.7rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-lt)}
+  .feat__who b{color:#fff;font-weight:600}
+  .feat__who .stars{color:var(--brass-lt);letter-spacing:.1em;margin-left:.6rem}
+
+  /* --- The Luxe Method (progress timeline) -------------------- */
+  .tl{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.2rem);position:relative;margin:0;padding:0}
+  .tl::before{content:"";position:absolute;top:19px;left:9%;right:9%;height:1px;background:var(--line-dk);z-index:0}
+  .tl__c{position:relative;z-index:1;text-align:center}
+  .tl__node{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brass-dk);
+    color:#fff;font-family:var(--serif);font-size:1rem;font-weight:600;margin:0 auto 1.3rem;border:4px solid var(--ink)}
+  .tl__img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;margin-bottom:1.1rem}
+  .tl__c h3{color:#fff;font-size:1.22rem;font-weight:500;margin-bottom:.45rem}
+  .tl__c p{color:var(--stone-lt);font-size:.86rem;line-height:1.55}
+  @media(max-width:780px){.tl{grid-template-columns:1fr 1fr;gap:2rem}.tl::before{display:none}}
+  @media(max-width:480px){.tl{grid-template-columns:1fr}}
+
+  /* --- Reviews (Google-style widget) -------------------------- */
+  .gwidget{max-width:980px;margin:0 auto;background:#fff;border:1px solid #e3ddcf;border-radius:12px;overflow:hidden;box-shadow:0 16px 44px rgba(20,19,15,.06)}
+  .gwidget__head{display:flex;align-items:center;gap:1rem;padding:1.3rem 1.6rem;border-bottom:1px solid #ece7da;flex-wrap:wrap}
+  .g-logo{width:40px;height:40px;flex:none}
+  .gwidget__rate .num{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--ink);line-height:1}
+  .gstars{color:#f5a623;letter-spacing:.05em}
+  .gwidget__rate .sub{font-size:.82rem;color:#5a564b;margin-top:.25rem}
+  .gwidget__link{margin-left:auto;font-size:.82rem;font-weight:600;color:#1a6fd6;border:1px solid #dadce0;border-radius:100px;padding:.55rem 1.15rem;transition:.2s}
+  .gwidget__link:hover{background:#f4f8fd;border-color:#1a6fd6}
+  .greviews{display:grid;grid-template-columns:repeat(3,1fr)}
+  .greview{padding:1.4rem 1.5rem;border-right:1px solid #ece7da}
+  .greview:last-child{border-right:0}
+  .greview__top{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem}
+  .greview__av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:1.05rem;flex:none}
+  .greview__top b{display:block;font-size:.92rem;color:var(--ink);font-weight:600}
+  .greview__meta{font-size:.76rem;color:#73706a}
+  .greview__g{margin-left:auto;width:18px;height:18px;flex:none}
+  .greview .gstars{font-size:.86rem;margin-bottom:.5rem;display:block}
+  .greview p{font-size:.9rem;color:#3a352b;line-height:1.6}
+  @media(max-width:760px){.greviews{grid-template-columns:1fr}.greview{border-right:0;border-bottom:1px solid #ece7da}.greview:last-child{border-bottom:0}}
+
+  /* --- Service area ------------------------------------------- */
+  .area{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .area__list{columns:3;column-gap:1.6rem;font-size:.92rem}
+  .area__list a{display:block;padding:.5rem 0;border-bottom:1px solid var(--line);color:#3a352b;transition:.2s}
+  .area__list a:hover{color:#6c5420;padding-left:.35rem}
+  @media(max-width:820px){.area{grid-template-columns:1fr}.area__list{columns:2}}
+
+  /* --- Contact ------------------------------------------------ */
+  .contact{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .contact__info p{color:#46413a}
+  .contact__pts{list-style:none;margin-top:1.5rem;display:grid;gap:1.1rem}
+  .contact__pts li{display:flex;gap:.85rem;align-items:flex-start;font-size:1rem;color:#2b271f}
+  .contact__pts a{color:#2b271f}
+  .contact__pts a:hover{color:#6c5420}
+  .contact__pts svg{width:21px;height:21px;stroke:#6c5420;fill:none;stroke-width:1.7;flex:none;margin-top:.15rem}
+  .lead{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(1.6rem,2.6vw,2.4rem)}
+  .lead h3{font-size:1.65rem;margin-bottom:.3rem}
+  .lead__req{color:#46413a;font-size:.86rem;margin-bottom:1.4rem}
+  .lead label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#3a352b;margin:0 0 .45rem}
+  .lead label .rq{color:#9a3b30}
+  .lead input,.lead select,.lead textarea{width:100%;padding:.9rem 1rem;border:1px solid #7e7868;border-radius:2px;
+    font-family:var(--sans);font-size:1rem;margin-bottom:1.05rem;background:#fff;color:var(--ink)}
+  .lead input::placeholder,.lead textarea::placeholder{color:#6f6a5c}
+  .lead input:focus,.lead select:focus,.lead textarea:focus{border-color:var(--brass-dk)}
+  .lead .btn{width:100%;justify-content:center;margin-top:.3rem}
+  .lead small{display:block;text-align:center;color:#6b6555;margin-top:.9rem;font-size:.78rem}
+  @media(max-width:820px){.contact{grid-template-columns:1fr}}
+
+  /* --- Final CTA (full-bleed dark) ---------------------------- */
+  .fcta{position:relative;color:#fff;overflow:hidden;text-align:center}
+  .fcta__bg{position:absolute;inset:0;z-index:0}
+  .fcta__bg img{width:100%;height:100%;object-fit:cover}
+  .fcta__scrim{position:absolute;inset:0;z-index:1;background:rgba(20,19,15,.76)}
+  .fcta__in{position:relative;z-index:2;max-width:720px;margin:0 auto;padding-block:clamp(4.5rem,10vw,8rem)}
+  .fcta h2{color:#fff;font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1.2rem}
+  .fcta p{color:rgba(246,241,231,.9);font-size:1.12rem;margin-bottom:2rem}
+  .fcta__btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+  /* --- Overflow safety: let footer columns shrink so the long email wraps
+         instead of forcing horizontal scroll on mobile (page-scoped) --- */
+  .foot__grid>div,.foot ul{min-width:0}
+  .foot a,.foot li,.foot p,.contact__pts a{overflow-wrap:anywhere}
+  @media(max-width:480px){.foot__grid{grid-template-columns:1fr;gap:1.8rem}}
+
+  /* --- Sticky mobile call ------------------------------------- */
+  .stickycall{position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+    background:var(--brass-dk);color:#fff;text-align:center;padding:.95rem;font-weight:600;letter-spacing:.05em}
+  @media(max-width:760px){.stickycall{display:block}.compbar{bottom:4rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -113,190 +298,55 @@
         "longitude": -88.0017
       },
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Lemont"
-        },
-        {
-          "@type": "City",
-          "name": "Hinsdale"
-        },
-        {
-          "@type": "City",
-          "name": "Oak Brook"
-        },
-        {
-          "@type": "City",
-          "name": "Burr Ridge"
-        },
-        {
-          "@type": "City",
-          "name": "Naperville"
-        },
-        {
-          "@type": "City",
-          "name": "Western Springs"
-        },
-        {
-          "@type": "City",
-          "name": "Clarendon Hills"
-        },
-        {
-          "@type": "City",
-          "name": "Downers Grove"
-        },
-        {
-          "@type": "City",
-          "name": "Darien"
-        },
-        {
-          "@type": "City",
-          "name": "Elmhurst"
-        },
-        {
-          "@type": "City",
-          "name": "Glen Ellyn"
-        },
-        {
-          "@type": "City",
-          "name": "La Grange"
-        }
+        { "@type": "City", "name": "Lemont" },
+        { "@type": "City", "name": "Hinsdale" },
+        { "@type": "City", "name": "Oak Brook" },
+        { "@type": "City", "name": "Burr Ridge" },
+        { "@type": "City", "name": "Naperville" },
+        { "@type": "City", "name": "Western Springs" },
+        { "@type": "City", "name": "Clarendon Hills" },
+        { "@type": "City", "name": "Downers Grove" },
+        { "@type": "City", "name": "Darien" },
+        { "@type": "City", "name": "Elmhurst" },
+        { "@type": "City", "name": "Glen Ellyn" },
+        { "@type": "City", "name": "La Grange" },
+        { "@type": "City", "name": "Orland Park" }
       ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
           "opens": "08:00",
           "closes": "17:00"
         }
       ],
-      "founder": {
-        "@type": "Person",
-        "name": "Tom Naglak"
-      },
+      "founder": { "@type": "Person", "name": "Tom Naglak" },
       "sameAs": [
         "https://www.facebook.com/luxedevelopment",
         "https://www.instagram.com/luxedevelopment"
       ],
       "knowsAbout": [
-        "new construction",
-        "home additions",
-        "luxury remodeling",
-        "interior remodeling",
-        "interior design",
-        "exterior design",
-        "kitchen remodeling",
-        "bathroom remodeling"
+        "new construction","home additions","luxury remodeling","interior remodeling",
+        "interior design","exterior design","kitchen remodeling","bathroom remodeling"
       ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "37",
+        "bestRating": "5"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Construction & Renovation Services",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "New Construction",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Home Additions",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Remodeling",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Interior Remodeling",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Interior Makeover",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Interior Design",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Exterior Design",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Kitchen Remodeling",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Bathroom Remodeling",
-              "areaServed": "Chicago's Western Suburbs",
-              "provider": {
-                "@id": "https://luxe-development-pitch.vercel.app/#business"
-              }
-            }
-          }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Construction", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Additions", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Remodeling", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole-Home Renovation", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Design", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Kitchen Remodeling", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Luxury Bathroom Remodeling", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Finished Basements", "areaServed": "Chicago's Western Suburbs", "provider": { "@id": "https://luxe-development-pitch.vercel.app/#business" } } }
         ]
       }
     },
@@ -305,65 +355,29 @@
       "@id": "https://luxe-development-pitch.vercel.app/#website",
       "url": "https://luxe-development-pitch.vercel.app/",
       "name": "Luxe Development",
-      "publisher": {
-        "@id": "https://luxe-development-pitch.vercel.app/#business"
-      },
+      "publisher": { "@id": "https://luxe-development-pitch.vercel.app/#business" },
       "inLanguage": "en-US"
     },
     {
       "@type": "WebPage",
       "@id": "https://luxe-development-pitch.vercel.app/",
       "url": "https://luxe-development-pitch.vercel.app/",
-      "name": "Luxe Development — A Better Website, Built to Rank | A2Z MKTG Proposal",
-      "description": "A2Z MKTG proposal for Luxe Development: 7 homepage concepts, the #1 ranking strategy, and 3 build packages.",
-      "isPartOf": {
-        "@id": "https://luxe-development-pitch.vercel.app/#website"
-      },
-      "about": {
-        "@id": "https://luxe-development-pitch.vercel.app/#business"
-      },
-      "primaryImageOfPage": "https://luxe-development-pitch.vercel.app/images/og-luxe.jpg",
+      "name": "Luxe Development | Custom Home Builder &amp; Remodeler — Lemont &amp; Chicago's Western Suburbs",
+      "description": "Award-quality custom homes, additions &amp; luxury remodels in Lemont, Hinsdale, Oak Brook, Naperville &amp; 20+ western suburbs. Rated 5.0 on Google. Free site walkthrough — (312) 445-0727.",
+      "isPartOf": { "@id": "https://luxe-development-pitch.vercel.app/#website" },
+      "about": { "@id": "https://luxe-development-pitch.vercel.app/#business" },
+      "primaryImageOfPage": "https://luxe-development-pitch.vercel.app/images/lux-hero.jpg",
       "inLanguage": "en-US"
     },
     {
-      "@type": "ItemList",
-      "name": "Homepage concepts",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "url": "https://luxe-development-pitch.vercel.app/01-editorial.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "url": "https://luxe-development-pitch.vercel.app/02-cinematic.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "url": "https://luxe-development-pitch.vercel.app/03-method.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "url": "https://luxe-development-pitch.vercel.app/04-portfolio.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "url": "https://luxe-development-pitch.vercel.app/05-local-authority.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "url": "https://luxe-development-pitch.vercel.app/06-heritage.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "url": "https://luxe-development-pitch.vercel.app/07-architect.html"
-        }
+      "@type": "FAQPage",
+      "@id": "https://luxe-development-pitch.vercel.app/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Where does Luxe Development build?", "acceptedAnswer": { "@type": "Answer", "text": "Across Chicago's western and southwest suburbs - Lemont, Hinsdale, Oak Brook, Burr Ridge, Naperville, Downers Grove, Western Springs and 20+ surrounding communities in DuPage, Cook and Will County." } },
+        { "@type": "Question", "name": "What does \"design-build\" mean for me?", "acceptedAnswer": { "@type": "Answer", "text": "One company owns the architecture, engineering and construction. You sign one contract and hold one team accountable instead of refereeing between a separate architect, engineer and general contractor." } },
+        { "@type": "Question", "name": "Do you handle both custom homes and renovations?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build ground-up custom homes and take on whole-home renovations, additions, and luxury kitchen, bath and basement projects." } },
+        { "@type": "Question", "name": "How do you handle budget and timeline?", "acceptedAnswer": { "@type": "Answer", "text": "Selections and scope are locked into an itemized budget before construction begins, so the number you approve is the number we build to, with a clear schedule and milestone walk-throughs." } },
+        { "@type": "Question", "name": "How do we get started?", "acceptedAnswer": { "@type": "Answer", "text": "With a complimentary site walkthrough. We will review your property, discuss your vision, and outline a realistic path, timeline and budget range before you commit to anything." } }
       ]
     }
   ]
@@ -372,139 +386,534 @@
 </head>
 <body>
 
-<header class="ix-hero">
-  <div class="kicker">A2Z MKTG · Proposal for Luxe Development · June 2026</div>
-  <h1>A complete marketing system —<br>built to <em>rank &amp; convert.</em></h1>
-  <p>Three homepage concepts, three services (Website · Organic Growth · Paid Growth), and the full strategy to get Luxe Development to #1 for the searches that win jobs. Explore below.</p>
-  <div class="ix-jump">
-    <a href="#concepts">3 Homepage Concepts</a>
-    <a href="#services">The 3 Services</a>
-    <a href="strategy.html">Ranking Strategy</a>
-    <a href="packages.html">Packages &amp; Pricing</a>
-  </div>
-  <div class="ix-meta">
-    <div><b>Client</b> &nbsp;Luxe Development Inc.</div>
-    <div><b>Market</b> &nbsp;Lemont &amp; Chicago's western suburbs</div>
-    <div><b>Focus</b> &nbsp;Luxury custom homes + renovation</div>
-    <div><b>Rated</b> &nbsp;5.0★ on Google</div>
-  </div>
-</header>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- CONCEPTS -->
-<div class="sec-lbl" id="concepts">
-  <h2>Three homepage concepts</h2>
-  <span>Three directions · same brand · pick the one that fits</span>
-</div>
-<main class="grid">
-  <a class="card" href="01-editorial.html">
-    <div class="card__img"><span class="card__no">01</span><img src="images/great-room.jpg" alt="Editorial concept"></div>
-    <div class="card__body"><span class="card__tag">Dark Luxury</span><h3>The Editorial</h3>
-      <p>Architectural-Digest restraint — dark, serif, whitespace. Work as art.</p>
-      <span class="card__go">View live <span>→</span></span></div>
-  </a>
-  <a class="card" href="05-local-authority.html" style="border-color:var(--brass)">
-    <div class="card__img"><span class="card__no" style="background:var(--brass);color:#fff">05★</span><img src="images/kitchen.jpg" alt="Local authority concept"></div>
-    <div class="card__body"><span class="card__tag" style="color:var(--brass-dk)">★ Recommended · Conversion + SEO</span><h3>The Local Authority</h3>
-      <p>Lead form, click-to-call, reviews, suburb block. Built to rank and convert — the one A2Z recommends.</p>
-      <span class="card__go">View live <span>→</span></span></div>
-  </a>
-  <a class="card" href="07-architect.html">
-    <div class="card__img"><span class="card__no">07</span><img src="images/architect-modern.jpg" alt="Architect concept"></div>
-    <div class="card__body"><span class="card__tag">Modern Minimal</span><h3>The Architect</h3>
-      <p>White, Swiss-grid precision — contemporary studio aesthetic for the modern builder.</p>
-      <span class="card__go">View live <span>→</span></span></div>
-  </a>
-  <div class="card" style="justify-content:center;align-items:center;text-align:center;background:transparent;border-style:dashed">
-    <div class="card__body" style="flex:none">
-      <span class="card__tag">Same brand system</span>
-      <h3 style="font-size:1.35rem">Ink · Ivory · Brass</h3>
-      <p style="flex:none">All seven share one design system, so you're choosing a direction — not just a color.</p>
+<nav class="nav la-nav" id="nav" aria-label="Primary">
+  <a class="nav__brand" href="index.html">Luxe<small>Development</small></a>
+  <div class="nav__links">
+    <a href="#about">About</a><a href="#services">Services</a>
+    <a href="#projects">Portfolio</a><a href="#area">Service Area</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav__cta" href="tel:+13124450727">(312) 445-0727</a>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero is-dark" aria-label="Introduction">
+  <div class="hero__bg"><img src="images/lux-hero.jpg" alt="Luxe Development custom stone home at dusk with warm-lit windows and manicured landscaping in Chicago's western suburbs" width="1376" height="768" fetchpriority="high"></div>
+  <div class="hero__scrim"></div>
+  <div class="container hero__in">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="hero__rating"><span class="stars">★★★★★</span> <span><b>5.0</b> on Google · Lemont, IL</span></p>
+        <h1>Custom homes for the way you actually live.</h1>
+        <p class="hero__sub">A design-build studio crafting one-of-a-kind homes and luxury renovations across
+        Chicago's western suburbs — architecture, engineering and construction under one roof.</p>
+        <div>
+          <span class="hero__calllabel">Prefer to talk?</span>
+          <a class="hero__call" href="tel:+13124450727">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l2-3-5-2-2 2c-3-1-6-4-7-7l2-2-2-5z"/></svg>
+            (312) 445-0727</a>
+        </div>
+      </div>
+
+      <!-- HERO QUIZ -->
+      <div class="hero__form reveal">
+        <form class="quiz" id="quizForm" aria-label="Get your free consultation in three steps" novalidate>
+          <div class="quiz__body">
+            <div class="quiz__head">
+              <span class="quiz__title">Start your project</span>
+              <span class="quiz__count" id="quizCount" aria-live="polite">Step 1 of 3</span>
+            </div>
+            <div class="quiz__bar" aria-hidden="true"><span id="quizBar"></span></div>
+
+            <fieldset class="quiz__step" data-step="0">
+              <legend class="quiz__q">What are you planning?</legend>
+              <div class="quiz__opts">
+                <button type="button" class="quiz__opt" data-field="project" data-val="New custom home">New custom home</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Whole-home renovation">Whole-home renovation</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Addition / expansion">Addition / expansion</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Kitchen remodel">Kitchen remodel</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Bathroom remodel">Bathroom remodel</button>
+                <button type="button" class="quiz__opt" data-field="project" data-val="Finished basement">Finished basement</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="1" hidden>
+              <legend class="quiz__q">What's your timeline?</legend>
+              <div class="quiz__opts">
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="As soon as possible">As soon as possible</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="1–3 months">1–3 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="3–6 months">3–6 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="6–12 months">6–12 months</button>
+                <button type="button" class="quiz__opt" data-field="timeline" data-val="Just exploring">Just exploring</button>
+              </div>
+              <div class="quiz__nav"><button type="button" class="quiz__back">← Back</button></div>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="2" hidden>
+              <legend class="quiz__q">Where should we send your details?</legend>
+              <p class="quiz__chosen" id="quizChosen"></p>
+              <div class="quiz__field"><label for="quiz-name">Full name <span class="rq" aria-hidden="true">*</span></label><input id="quiz-name" name="name" type="text" autocomplete="name" required aria-required="true"></div>
+              <div class="quiz__field"><label for="quiz-email">Email <span class="rq" aria-hidden="true">*</span></label><input id="quiz-email" name="email" type="email" autocomplete="email" required aria-required="true"></div>
+              <div class="quiz__row">
+                <div class="quiz__field"><label for="quiz-phone">Phone <span class="rq" aria-hidden="true">*</span></label><input id="quiz-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true"></div>
+                <div class="quiz__field"><label for="quiz-city">City <span class="rq" aria-hidden="true">*</span></label><input id="quiz-city" name="city" type="text" autocomplete="address-level2" required aria-required="true"></div>
+              </div>
+              <!-- Honeypot: off-screen and hidden from assistive tech; bots fill it, humans don't -->
+              <div class="hp" aria-hidden="true"><label>Company website (leave blank)<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+              <input type="hidden" name="project" id="quiz-project">
+              <input type="hidden" name="timeline" id="quiz-timeline">
+              <div class="quiz__nav">
+                <button type="button" class="quiz__back">← Back</button>
+                <button type="submit" class="btn btn--brass quiz__submit">Get My Consultation →</button>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="quiz__done" id="quizDone" hidden tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <h3>Thank you — request received.</h3>
+            <p>We'll reach out within one business day to schedule your complimentary site walkthrough.</p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="tstrip is-dark"><div class="container tstrip__in">
+  <span class="tstrip__i"><b>20+</b> Years building</span>
+  <span class="tstrip__i"><b>150+</b> Homes delivered</span>
+  <span class="tstrip__i"><b>25+</b> Suburbs served</span>
+  <span class="tstrip__i"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 on Google</span>
+  <span class="tstrip__i">Licensed &amp; insured</span>
+</div></div>
+
+<!-- ABOUT / LOCAL AUTHORITY -->
+<section class="section container" id="about">
+  <div class="intro">
+    <figure class="intro__media reveal" style="margin:0">
+      <img src="images/lux-detail.jpg" alt="Custom floating white-oak staircase with a slim blackened-brass railing in a Luxe Development home" width="928" height="1152" loading="lazy">
+    </figure>
+    <div class="reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2 class="h2" style="margin-top:1rem">A Lemont builder, held to a standard you can see.</h2>
+      <p class="intro__lead">Luxe Development was founded on one idea: the family building their forever home
+      shouldn't have to manage three companies to get it.</p>
+      <p>So we keep architecture, engineering, interior design and construction under one roof — one team,
+      one contract, one standard. The people who design your home are the people who build it, and they
+      answer to you.</p>
+      <p>For more than twenty years we've built ground-up custom homes and reimagined existing ones across
+      Lemont, Hinsdale, Oak Brook, Burr Ridge and Naperville — to a standard meant to outlast the trends, and
+      the people who set them.</p>
+      <div class="sig">
+        <span class="mk" aria-hidden="true">L</span>
+        <div>
+          <div class="name">Tom Naglak</div>
+          <div class="role">Founder · Luxe Development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stats reveal">
+    <div class="stats__c"><b>20+</b><span>Years building<br>the western suburbs</span></div>
+    <div class="stats__c"><b>150+</b><span>Custom homes &amp;<br>renovations delivered</span></div>
+    <div class="stats__c"><b>25+</b><span>Suburbs served across<br>DuPage, Cook &amp; Will</span></div>
+    <div class="stats__c"><b>5.0★</b><span>Average rating<br>on Google</span></div>
+  </div>
+</section>
+
+<!-- SERVICES (photo-led) -->
+<section class="section bg-paper" id="services">
+  <div class="container">
+    <div style="max-width:60ch;margin-bottom:2.4rem" class="reveal">
+      <span class="eyebrow">What We Build</span>
+      <h2 class="h2" style="margin:1rem 0 1rem">From the ground up — or the room you can't stop thinking about.</h2>
+      <p class="lede">Custom homes are our craft. Renovations are how most of the western suburbs first meet
+      us. We do both to the same standard.</p>
+    </div>
+    <div class="altrows">
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/facade-day.jpg" alt="Completed custom home exterior built by Luxe Development" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">01 — New Construction</span>
+          <h3>Custom Homes</h3>
+          <p>Ground-up architecture, engineering and construction, fully in-house — a one-of-one home designed around how your family actually lives, then built by the same team that drew it.</p>
+        </div>
+      </article>
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/great-room.jpg" alt="Renovated great room with custom millwork and natural light" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">02 — Renovation</span>
+          <h3>Whole-Home Renovation</h3>
+          <p>Keep the address you love and rebuild the home to a new standard — reworked layouts, new systems and finishes that feel original, not added on.</p>
+        </div>
+      </article>
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/architect-modern.jpg" alt="Modern home addition with clean architectural lines" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">03 — Expansion</span>
+          <h3>Additions &amp; Expansions</h3>
+          <p>Second stories, primary-suite wings and family-room additions, engineered and detailed to look like they were always part of the house.</p>
+        </div>
+      </article>
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/kitchen.jpg" alt="Luxury custom kitchen with marble island and brass detailing" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">04 — Renovation <span class="altrow__tag">Most requested</span></span>
+          <h3>Luxury Kitchens</h3>
+          <p>The room that sells the home and runs your family — custom cabinetry, stone and lighting detailed to the millimeter.</p>
+        </div>
+      </article>
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/primary-bath.jpg" alt="Spa-style primary bathroom in marble and brass with natural light" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">05 — Renovation <span class="altrow__tag">Most requested</span></span>
+          <h3>Spa Bathrooms</h3>
+          <p>Marble, brass and daylight executed like fine cabinetry — primary baths that feel like the best hotel you've ever stayed in.</p>
+        </div>
+      </article>
+      <article class="altrow reveal">
+        <figure class="altrow__media"><img src="images/basement-lounge.jpg" alt="Finished lower-level lounge with custom bar and theater seating" loading="lazy"></figure>
+        <div>
+          <span class="altrow__n">06 — Lower Level</span>
+          <h3>Finished Basements</h3>
+          <p>Wine rooms, theaters, gyms and lounges that feel original to the home — not an afterthought below it.</p>
+        </div>
+      </article>
+    </div>
+    <p style="margin-top:2.6rem" class="reveal"><a class="btn" href="#contact">Discuss Your Project</a></p>
+  </div>
+</section>
+
+<!-- FEATURED TESTIMONIAL BAND -->
+<section class="feat is-dark" aria-label="Client testimonial">
+  <div class="feat__bg"><img src="images/lux-greatroom.jpg" alt="Luxe Development great room interior with white-oak beams, brass chandelier and marble fireplace" loading="lazy"></div>
+  <div class="feat__scrim"></div>
+  <div class="container feat__in reveal">
+    <span class="eyebrow on-dark">The Luxe Standard</span>
+    <blockquote class="feat__q">"They managed the architecture, engineering and every finish without a single thing
+    slipping. The home we walked into was exactly the home they drew."</blockquote>
+    <p class="feat__who"><b>Michael R.</b> · Burr Ridge <span class="stars" aria-label="five out of five stars">★★★★★</span> Google Review</p>
+  </div>
+</section>
+
+<!-- THE LUXE METHOD -->
+<section class="section bg-ink is-dark" id="method">
+  <div class="container">
+    <div style="max-width:52ch;margin:0 auto 2.6rem;text-align:center" class="reveal">
+      <span class="eyebrow center on-dark">Our Process</span>
+      <h2 class="h2" style="color:#fff;margin-top:1rem">The Luxe Method</h2>
+      <p style="color:var(--stone-lt);margin-top:1rem">Four stages, one team, zero handoffs — the same path on a
+      new kitchen as on a new home.</p>
+    </div>
+    <ol class="tl reveal">
+      <li class="tl__c">
+        <span class="tl__node">01</span>
+        <img class="tl__img" src="images/architect-modern.jpg" alt="Architectural and structural design stage" loading="lazy">
+        <h3>Vision &amp; Architecture</h3>
+        <p>We listen, walk the site, and let design and engineering define a realistic build before a dollar is committed.</p>
+      </li>
+      <li class="tl__c">
+        <span class="tl__node">02</span>
+        <img class="tl__img" src="images/kitchen.jpg" alt="Selecting finishes, fixtures and materials" loading="lazy">
+        <h3>Bespoke Curation</h3>
+        <p>Finishes, fixtures and budget are selected and locked early — so the number you approve is the number we hold.</p>
+      </li>
+      <li class="tl__c">
+        <span class="tl__node">03</span>
+        <img class="tl__img" src="images/facade-day.jpg" alt="In-house construction supervised on site" loading="lazy">
+        <h3>Master Construction</h3>
+        <p>Our own crews build it, supervised on site daily, with milestone walk-throughs that keep you ahead of every decision.</p>
+      </li>
+      <li class="tl__c">
+        <span class="tl__node">04</span>
+        <img class="tl__img" src="images/lux-greatroom.jpg" alt="Finished home delivered at white-glove handover" loading="lazy">
+        <h3>White-Glove Handover</h3>
+        <p>A detailed final walk-through, a punch list closed to zero, and a home delivered exactly as drawn.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section container" id="projects">
+  <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem">
+    <div><span class="eyebrow">Recent Projects</span>
+      <h2 class="h2" style="margin-top:1rem">Custom homes &amp; renovations<br>across the western suburbs</h2></div>
+    <p style="max-width:36ch;color:#46413a">A selection of recent work — each home designed, engineered and built by our own team.</p>
+  </div>
+  <div class="gallery reveal">
+    <figure class="gallery__c"><span class="tag">New Build</span><img src="images/proj-custom-home-hinsdale.jpg" alt="Completed luxury custom home build in Hinsdale, IL by Luxe Development" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Custom Home Build</span><span class="loc">Hinsdale, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Kitchen</span><img src="images/proj-kitchen-oak-brook.jpg" alt="Luxury custom kitchen remodel with navy island and marble in Oak Brook, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Kitchen Remodel</span><span class="loc">Oak Brook, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Bath</span><img src="images/proj-bath-burr-ridge.jpg" alt="Luxury primary bathroom renovation with marble and brass in Burr Ridge, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Primary Bath Renovation</span><span class="loc">Burr Ridge, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Renovation</span><img src="images/proj-living-naperville.jpg" alt="Whole-home renovation living and dining room in Naperville, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Whole-Home Renovation</span><span class="loc">Naperville, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Addition</span><img src="images/proj-addition-western-springs.jpg" alt="Vaulted family-room home addition in Western Springs, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Family-Room Addition</span><span class="loc">Western Springs, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Lower Level</span><img src="images/proj-basement-darien.jpg" alt="Luxury finished basement with home theater and wet bar in Darien, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Finished Basement</span><span class="loc">Darien, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">New Build</span><img src="images/proj-new-construction-downers-grove.jpg" alt="Modern new-construction custom home exterior in Downers Grove, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">New Construction Home</span><span class="loc">Downers Grove, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Interior</span><img src="images/proj-primary-suite-glen-ellyn.jpg" alt="Luxury primary bedroom suite remodel in Glen Ellyn, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Primary Suite Remodel</span><span class="loc">Glen Ellyn, IL</span></figcaption></figure>
+    <figure class="gallery__c"><span class="tag">Outdoor</span><img src="images/proj-outdoor-lemont.jpg" alt="Outdoor living space with pool, spa and patio in Lemont, IL" loading="lazy" width="1600" height="1067"><figcaption><span class="svc">Outdoor Living &amp; Pool</span><span class="loc">Lemont, IL</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section bg-paper" id="reviews">
+  <div style="text-align:center;max-width:50ch;margin:0 auto 2.4rem" class="reveal">
+    <span class="eyebrow center">Reviews</span>
+    <h2 class="h2" style="margin-top:1rem">Rated 5.0 across the western suburbs</h2>
+  </div>
+
+  <!-- Google "G" defined once, reused via <use> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gIcon" viewBox="0 0 48 48"><path fill="#4285F4" d="M45 24c0-1.6-.1-3.1-.4-4.6H24v9.1h11.8c-.5 2.8-2 5.1-4.4 6.7v5.5h7.1C42.7 37 45 31 45 24z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.4 2.1-5.7 0-10.5-3.8-12.2-9H4.5v5.7C8.1 41.1 15.5 46 24 46z"/><path fill="#FBBC05" d="M11.8 28.3c-.4-1.3-.7-2.7-.7-4.3s.3-3 .7-4.3v-5.7H4.5C3 17 2 20.4 2 24s1 7 2.5 10z"/><path fill="#EA4335" d="M24 10.7c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.1 29.9 2 24 2 15.5 2 8.1 6.9 4.5 14l7.3 5.7c1.7-5.2 6.5-9 12.2-9z"/></symbol></svg>
+
+  <div class="container reveal">
+    <div class="gwidget">
+      <div class="gwidget__head">
+        <svg class="g-logo" aria-label="Google"><use href="#gIcon"/></svg>
+        <div class="gwidget__rate">
+          <div class="num">5.0 <span class="gstars" aria-label="5 out of 5 stars">★★★★★</span></div>
+          <div class="sub">Google Rating · based on 37 reviews</div>
+        </div>
+        <a class="gwidget__link" href="https://www.google.com/search?q=Luxe+Development+Lemont+IL+reviews" target="_blank" rel="noopener">View on Google</a>
+      </div>
+      <div class="greviews">
+        <article class="greview">
+          <div class="greview__top">
+            <span class="greview__av" style="background:#7b5ea7">S</span>
+            <div><b>Sarah &amp; Tom K.</b><span class="greview__meta">2 weeks ago</span></div>
+            <svg class="greview__g" aria-hidden="true"><use href="#gIcon"/></svg>
+          </div>
+          <span class="gstars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>The most organized builder we interviewed — and it showed at every stage. Communication was flawless and the craftsmanship is incredible.</p>
+        </article>
+        <article class="greview">
+          <div class="greview__top">
+            <span class="greview__av" style="background:#2a8c6f">D</span>
+            <div><b>David L.</b><span class="greview__meta">a month ago</span></div>
+            <svg class="greview__g" aria-hidden="true"><use href="#gIcon"/></svg>
+          </div>
+          <span class="gstars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>Our whole-home renovation stayed on scope and on budget. You can feel the quality in every detail. We'd hire Luxe again in a heartbeat.</p>
+        </article>
+        <article class="greview">
+          <div class="greview__top">
+            <span class="greview__av" style="background:#c1554a">J</span>
+            <div><b>Jennifer P.</b><span class="greview__meta">3 months ago</span></div>
+            <svg class="greview__g" aria-hidden="true"><use href="#gIcon"/></svg>
+          </div>
+          <span class="gstars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p>They turned a dated 1990s house into the home we'd always pictured — and made the whole process feel calm. Worth every penny.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="section container" id="area">
+  <div class="area">
+    <div class="reveal">
+      <span class="eyebrow">Service Area</span>
+      <h2 class="h2" style="margin:1rem 0 1rem">Building across<br>Chicago's western suburbs</h2>
+      <p style="color:#46413a;margin-bottom:1.5rem">Based in Lemont, we build and renovate throughout DuPage,
+      Cook and Will County's most established communities. Don't see your town? Just ask — we likely serve it.</p>
+      <a class="btn" href="#contact">Check My Address</a>
+    </div>
+    <div class="area__list reveal">
+      <a href="#contact">Lemont</a><a href="#contact">Hinsdale</a><a href="#contact">Oak Brook</a><a href="#contact">Burr Ridge</a>
+      <a href="#contact">Western Springs</a><a href="#contact">Clarendon Hills</a><a href="#contact">Downers Grove</a><a href="#contact">Darien</a>
+      <a href="#contact">Willowbrook</a><a href="#contact">Naperville</a><a href="#contact">Lisle</a><a href="#contact">Wheaton</a>
+      <a href="#contact">Glen Ellyn</a><a href="#contact">Elmhurst</a><a href="#contact">La Grange</a><a href="#contact">La Grange Park</a>
+      <a href="#contact">Homer Glen</a><a href="#contact">Orland Park</a><a href="#contact">Palos Park</a><a href="#contact">Lockport</a>
+      <a href="#contact">Frankfort</a><a href="#contact">Hickory Hills</a><a href="#contact">Willow Springs</a><a href="#contact">Countryside</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section bg-bone" id="contact">
+  <div class="container contact">
+    <div class="contact__info reveal">
+      <span class="eyebrow">Free Consultation</span>
+      <h2 class="h2" style="margin:1rem 0 1rem">Tell us about your project.</h2>
+      <p>Share a few details and we'll reply within one business day to schedule your complimentary site
+      walkthrough — an honest read on scope, timeline and budget, with no pressure.</p>
+      <ul class="contact__pts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l2-3-5-2-2 2c-3-1-6-4-7-7l2-2-2-5z"/></svg> <a href="tel:+13124450727"><b>(312) 445-0727</b></a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg> <a href="mailto:info@luxedevelopment.net">info@luxedevelopment.net</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Lemont, IL 60439 · Mon–Fri 8a–5p</li>
+      </ul>
+    </div>
+    <form class="lead reveal" onsubmit="return false" aria-label="Request a consultation">
+      <h3>Request your free consultation</h3>
+      <p class="lead__req">Fields marked <span class="rq" aria-hidden="true">*</span> are required.</p>
+      <label for="lead-name">Full name <span class="rq" aria-hidden="true">*</span></label>
+      <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required aria-required="true">
+      <label for="lead-phone">Phone <span class="rq" aria-hidden="true">*</span></label>
+      <input id="lead-phone" name="phone" type="tel" autocomplete="tel" placeholder="(312) 555-0123" required aria-required="true">
+      <label for="lead-email">Email</label>
+      <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="jane@email.com">
+      <label for="lead-type">Project type</label>
+      <select id="lead-type" name="project_type">
+        <option>New custom home</option><option>Whole-home renovation</option>
+        <option>Addition / expansion</option><option>Kitchen remodel</option>
+        <option>Bathroom remodel</option><option>Finished basement</option>
+      </select>
+      <label for="lead-timeline">Timeline</label>
+      <select id="lead-timeline" name="timeline">
+        <option>As soon as possible</option><option>1–3 months</option><option>3–6 months</option>
+        <option>6–12 months</option><option>Just exploring</option>
+      </select>
+      <label for="lead-msg">A little about the project</label>
+      <textarea id="lead-msg" name="message" rows="3" placeholder="Tell us what you're planning…"></textarea>
+      <button class="btn btn--brass" type="submit">Request Consultation →</button>
+      <small>No obligation · Your information is never shared.</small>
+    </form>
+  </div>
+</section>
+
 </main>
 
-<!-- FEATURES -->
-<!-- SERVICES -->
-<div class="sec-lbl" id="services">
-  <h2>Three services</h2>
-  <span>Website · Organic Growth · Paid Growth</span>
-</div>
-<section class="grid">
-  <a class="card" href="website.html">
-    <div class="card__img" style="background:var(--ink);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
-      <span style="font-family:var(--serif);font-size:3rem;color:var(--brass);line-height:1">🏗️</span>
+<!-- FINAL CTA -->
+<section class="fcta is-dark" aria-label="Get started">
+  <div class="fcta__bg"><img src="images/facade-day.jpg" alt="" role="presentation"></div>
+  <div class="fcta__scrim"></div>
+  <div class="container fcta__in reveal">
+    <span class="eyebrow center on-dark">Free Site Walkthrough</span>
+    <h2 style="margin-top:1rem">Ready to build it right?</h2>
+    <p>Call now or request your free consultation. We'll give you an honest read on scope, timeline and
+    budget — no pressure.</p>
+    <div class="fcta__btns">
+      <a class="btn-solid" href="tel:+13124450727">Call (312) 445-0727</a>
+      <a class="btn btn--on-dark" href="#contact">Request Consultation</a>
     </div>
-    <div class="card__body">
-      <span class="card__tag">Service 01</span><h3>Website Build</h3>
-      <p>A custom site built to rank — location pages, full SEO schema, AI-readiness, and a content engine baked in from day one. Starter / Standard / Premium.</p>
-      <span class="card__go">Learn more <span>→</span></span>
-    </div>
-  </a>
-  <a class="card" href="organic-growth.html">
-    <div class="card__img" style="background:#0f1f1a;display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
-      <span style="font-family:var(--serif);font-size:3rem;color:#6FA88D;line-height:1">📈</span>
-    </div>
-    <div class="card__body">
-      <span class="card__tag">Service 02</span><h3>Organic Growth</h3>
-      <p>Monthly SEO maintenance, 8 GBP posts, citations, automated review generation, and plain-English reporting. The engine that compounds every month.</p>
-      <span class="card__go">Learn more <span>→</span></span>
-    </div>
-  </a>
-  <a class="card" href="paid-growth.html">
-    <div class="card__img" style="background:#1a1508;display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
-      <span style="font-family:var(--serif);font-size:3rem;color:var(--brass-lt);line-height:1">🎯</span>
-    </div>
-    <div class="card__body">
-      <span class="card__tag">Service 03</span><h3>Paid Growth</h3>
-      <p>Google Ads, Meta Ads, retargeting, AI voice receptionist, and a CRM pipeline — fill the pipeline now while organic SEO builds long-term authority.</p>
-      <span class="card__go">Learn more <span>→</span></span>
-    </div>
-  </a>
-</section>
-
-<!-- STRATEGY, PACKAGES, ECOSYSTEM -->
-<div class="sec-lbl"><h2>The plan &amp; the full picture</h2><span>strategy · pricing · how it all fits</span></div>
-<section class="feat">
-  <a class="fcard fcard--brass" href="strategy.html">
-    <span class="tag">The Strategy</span>
-    <h3>How we get you to&nbsp;#1</h3>
-    <p>The money keywords, why all five market leaders are beatable, and the exact method to own page one — then turn visibility into booked consultations.</p>
-    <span class="btn btn--brass">Read the Ranking Strategy →</span>
-  </a>
-  <a class="fcard" href="packages.html">
-    <span class="tag">Pricing</span>
-    <h3>Three ways to build it</h3>
-    <p>Starter, Standard and Premium — full site maps, page counts and pricing, with a clear recommendation for the build that dominates the western-suburb market.</p>
-    <span class="btn btn--on-dark">View the 3 Packages →</span>
-  </a>
-  <a class="fcard" href="ecosystem.html" style="background:linear-gradient(135deg,#1a2620,var(--ink))">
-    <span class="tag">The Full Picture</span>
-    <h3>How it all works together</h3>
-    <p>A website is one strand. See all 12 services — GBP, reviews, AI voice, CRM, ads — and how they connect into one marketing system.</p>
-    <span class="btn btn--on-dark">See the Ecosystem →</span>
-  </a>
-</section>
-
-<section class="note">
-  <div class="note__in">
-    <h4>How to use this proposal</h4>
-    <p>Every homepage concept is a full, responsive demo — click in, scroll, and try it on your phone. The bar at the bottom of every page jumps between all pages in the proposal. Start with the concepts to pick a direction, then explore the services and packages.</p>
-    <p>Photography is AI-generated placeholder imagery; reviewer names and figures are illustrative pending the client's real data. All pricing is estimated and confirmed during onboarding.</p>
   </div>
 </section>
 
-<nav class="compbar" aria-label="Concept switcher">
-  <a class="compbar__home" href="index.html">✦ Luxe</a>
-  <a href="01-editorial.html">01</a>
-  <a href="05-local-authority.html">05</a>
-  <a href="07-architect.html">07</a>
-  <a class="compbar__pill" href="website.html">Website</a>
-  <a class="compbar__pill" href="organic-growth.html">Organic</a>
-  <a class="compbar__pill" href="paid-growth.html">Paid Ads</a>
-  <a class="compbar__pill" href="ecosystem.html">Ecosystem</a>
-  <a class="compbar__pill" href="strategy.html">Strategy</a>
-  <a class="compbar__pill" href="packages.html">Packages</a>
+<!-- FOOTER -->
+<footer class="foot is-dark">
+  <div class="container">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__brand">Luxe Development</div>
+        <p style="opacity:.7;margin-top:1rem;max-width:34ch;font-size:.92rem">Licensed &amp; insured design-build
+        custom home builder serving Lemont and Chicago's western suburbs.</p>
+        <p style="margin-top:1rem"><a class="btn btn--brass" href="tel:+13124450727" style="padding:.8rem 1.4rem">Call (312) 445-0727</a></p>
+      </div>
+      <div><h5>Services</h5><ul>
+        <li><a href="#services">New Construction</a></li><li><a href="#services">Home Additions</a></li>
+        <li><a href="#services">Luxury Remodeling</a></li><li><a href="#services">Kitchen &amp; Bath</a></li>
+        <li><a href="#services">Interior &amp; Exterior Design</a></li></ul></div>
+      <div><h5>Service Area</h5><ul>
+        <li>Lemont · Hinsdale</li><li>Oak Brook · Burr Ridge</li><li>Naperville · Downers Grove</li>
+        <li>Western Springs · Darien</li><li>+ 17 more suburbs</li></ul></div>
+      <div><h5>Contact</h5><ul>
+        <li><a href="tel:+13124450727">(312) 445-0727</a></li>
+        <li><a href="mailto:info@luxedevelopment.net">info@luxedevelopment.net</a></li>
+        <li>Lemont, IL 60439</li>
+        <li style="margin-top:.6rem"><a href="#">Facebook</a> · <a href="#">Instagram</a></li></ul></div>
+    </div>
+    <div class="foot__bar">
+      <span>© 2026 Luxe Development Inc. · Licensed &amp; Insured General Contractor</span>
+      <span>Design-Build · Chicago Western Suburbs</span>
+    </div>
+  </div>
+</footer>
+
+<a class="stickycall" href="tel:+13124450727">📞 Tap to Call — (312) 445-0727</a>
+
+<nav class="compbar" aria-label="Site navigation">
+  <a class="compbar__home" href="index.html">✦ Luxe</a>
+  <a class="compbar__pill" href="index.html">Home</a>
+  <a class="compbar__pill" href="luxe-packages.html">Build Tiers</a>
 </nav>
+
+<script>
+  const nav=document.getElementById('nav');
+  const heroBg=document.querySelector('.hero__bg'), heroIn=document.querySelector('.hero__in');
+  const reduceMotion=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  addEventListener('scroll',()=>{
+    const y=scrollY;
+    nav.classList.toggle('scrolled',y>40);
+    if(!reduceMotion && heroIn && y<innerHeight){          // scroll-away: bg parallax + content fade/lift
+      heroBg.style.transform='translateY('+(y*0.28).toFixed(1)+'px)';
+      heroIn.style.transform='translateY('+(y*0.14).toFixed(1)+'px)';
+      heroIn.style.opacity=Math.max(0,1-y/(innerHeight*0.62)).toFixed(3);
+    }
+  },{passive:true});
+  var reveals=document.querySelectorAll('.reveal');
+  function showAll(){reveals.forEach(function(el){el.classList.add('in')});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+    reveals.forEach(function(el){io.observe(el);});
+    /* safety net: content must never stay hidden if the observer misfires */
+    setTimeout(showAll,3000);
+  } else { showAll(); }
+
+  /* Hero quiz: 3-step stepper with honeypot spam guard */
+  (function(){
+    var form=document.getElementById('quizForm'); if(!form) return;
+    var steps=Array.prototype.slice.call(form.querySelectorAll('.quiz__step'));
+    var count=document.getElementById('quizCount'), bar=document.getElementById('quizBar');
+    var chosen=document.getElementById('quizChosen'), done=document.getElementById('quizDone');
+    var body=form.querySelector('.quiz__body');
+    var data={project:'',timeline:''}, cur=0;
+    function go(i){
+      cur=Math.max(0,Math.min(steps.length-1,i));
+      steps.forEach(function(s,idx){ s.hidden=idx!==cur; });
+      count.textContent='Step '+(cur+1)+' of '+steps.length;
+      bar.style.width=((cur+1)/steps.length*100)+'%';
+      if(cur===steps.length-1 && chosen){ chosen.innerHTML='<b>'+data.project+'</b> · '+data.timeline; }
+      var lg=steps[cur].querySelector('.quiz__q');
+      if(lg){ lg.setAttribute('tabindex','-1'); try{ lg.focus({preventScroll:true}); }catch(e){} }
+    }
+    form.querySelectorAll('.quiz__opt').forEach(function(btn){
+      btn.setAttribute('aria-pressed','false');
+      btn.addEventListener('click',function(){
+        var f=btn.getAttribute('data-field'), v=btn.getAttribute('data-val');
+        data[f]=v;
+        var hid=document.getElementById('quiz-'+f); if(hid) hid.value=v;
+        var sibs=btn.parentNode.querySelectorAll('.quiz__opt');
+        Array.prototype.forEach.call(sibs,function(b){ b.setAttribute('aria-pressed', b===btn?'true':'false'); });
+        go(cur+1);
+      });
+    });
+    form.querySelectorAll('.quiz__back').forEach(function(b){ b.addEventListener('click',function(){ go(cur-1); }); });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.hp input');
+      if(hp && hp.value){ return false; }           /* honeypot tripped — silently drop */
+      var req=['quiz-name','quiz-email','quiz-phone','quiz-city'], el;
+      for(var i=0;i<req.length;i++){ el=document.getElementById(req[i]); if(!el.value.trim()){ el.focus(); return false; } }
+      /* demo: show success state in place of a real POST */
+      body.hidden=true; done.hidden=false; count.textContent='Done';
+      try{ done.focus(); }catch(e){}
+      return false;
+    });
+  })();
+</script>
 <script src="luxe.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Recent Projects by Luxe Development",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "Custom Home Build in Hinsdale, IL", "about": "Custom Home Build", "locationCreated": { "@type": "Place", "name": "Hinsdale, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-custom-home-hinsdale.jpg", "caption": "Completed luxury custom home build in Hinsdale, IL by Luxe Development" } } },
+    { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "Kitchen Remodel in Oak Brook, IL", "about": "Kitchen Remodel", "locationCreated": { "@type": "Place", "name": "Oak Brook, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-kitchen-oak-brook.jpg", "caption": "Luxury custom kitchen remodel with navy island and marble in Oak Brook, IL" } } },
+    { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "Primary Bath Renovation in Burr Ridge, IL", "about": "Primary Bath Renovation", "locationCreated": { "@type": "Place", "name": "Burr Ridge, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-bath-burr-ridge.jpg", "caption": "Luxury primary bathroom renovation with marble and brass in Burr Ridge, IL" } } },
+    { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "Whole-Home Renovation in Naperville, IL", "about": "Whole-Home Renovation", "locationCreated": { "@type": "Place", "name": "Naperville, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-living-naperville.jpg", "caption": "Whole-home renovation living and dining room in Naperville, IL" } } },
+    { "@type": "ListItem", "position": 5, "item": { "@type": "CreativeWork", "name": "Family-Room Addition in Western Springs, IL", "about": "Family-Room Addition", "locationCreated": { "@type": "Place", "name": "Western Springs, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-addition-western-springs.jpg", "caption": "Vaulted family-room home addition in Western Springs, IL" } } },
+    { "@type": "ListItem", "position": 6, "item": { "@type": "CreativeWork", "name": "Finished Basement in Darien, IL", "about": "Finished Basement", "locationCreated": { "@type": "Place", "name": "Darien, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-basement-darien.jpg", "caption": "Luxury finished basement with home theater and wet bar in Darien, IL" } } },
+    { "@type": "ListItem", "position": 7, "item": { "@type": "CreativeWork", "name": "New Construction Home in Downers Grove, IL", "about": "New Construction Home", "locationCreated": { "@type": "Place", "name": "Downers Grove, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-new-construction-downers-grove.jpg", "caption": "Modern new-construction custom home exterior in Downers Grove, IL" } } },
+    { "@type": "ListItem", "position": 8, "item": { "@type": "CreativeWork", "name": "Primary Suite Remodel in Glen Ellyn, IL", "about": "Primary Suite Remodel", "locationCreated": { "@type": "Place", "name": "Glen Ellyn, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-primary-suite-glen-ellyn.jpg", "caption": "Luxury primary bedroom suite remodel in Glen Ellyn, IL" } } },
+    { "@type": "ListItem", "position": 9, "item": { "@type": "CreativeWork", "name": "Outdoor Living & Pool in Lemont, IL", "about": "Outdoor Living & Pool", "locationCreated": { "@type": "Place", "name": "Lemont, IL" }, "creator": { "@id": "https://luxe-development-pitch.vercel.app/#business" }, "image": { "@type": "ImageObject", "url": "https://luxe-development-pitch.vercel.app/images/proj-outdoor-lemont.jpg", "caption": "Outdoor living space with pool, spa and patio in Lemont, IL" } } }
+  ]
+}
+</script>
 </body>
 </html>
