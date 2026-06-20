@@ -175,6 +175,11 @@
   .altrow h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.04;margin:0 0 .8rem}
   .altrow h3::after{content:"";display:block;width:48px;height:2px;background:var(--brass);margin-top:.9rem}
   .altrow p{color:#46413a;font-size:1.05rem;line-height:1.65;max-width:48ch}
+  .altrow__cta{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.4rem;font-family:var(--sans);font-size:.72rem;
+    font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);
+    padding:.7rem 1.3rem;border-radius:2px;transition:.25s}
+  .altrow__cta:hover{background:var(--ink);color:var(--ivory)}
+  .altrow__cta span{transition:.25s}.altrow__cta:hover span{transform:translateX(4px)}
   @media(max-width:760px){.altrow{grid-template-columns:1fr;gap:1.3rem}.altrow:nth-child(even) .altrow__media{order:0}
     .altrow__media{aspect-ratio:16/10}.altrow__num{font-size:2.4rem}}
 
@@ -206,18 +211,14 @@
   .vtl__kick{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-lt);font-weight:600}
   .vtl__card h3{color:#fff;font-size:1.45rem;font-weight:500;margin:.4rem 0 .55rem}
   .vtl__card p{color:var(--stone-lt);font-size:.92rem;line-height:1.6}
-  /* directional scroll-in (more specific than shared .reveal so it wins) */
-  .js .vtl__step:nth-child(odd) .vtl__card{transform:translateX(-34px)}
-  .js .vtl__step:nth-child(even) .vtl__card{transform:translateX(34px)}
-  .js .vtl__step .vtl__card.in{transform:none}
+  /* scale-on-approach (JS sets transform/opacity by distance from viewport centre) */
+  .vtl__card{transform-origin:center;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .4s;will-change:transform,opacity}
   @media(max-width:720px){
     .vtl::before{left:21px}
     .vtl__node{left:21px;width:42px;height:42px;font-size:.95rem}
     .vtl__step:nth-child(odd) .vtl__card,.vtl__step:nth-child(even) .vtl__card{width:auto;margin:0 0 0 56px}
-    .js .vtl__step:nth-child(odd) .vtl__card,.js .vtl__step:nth-child(even) .vtl__card{transform:translateY(26px)}
-    .js .vtl__step .vtl__card.in{transform:none}
   }
-  @media(prefers-reduced-motion:reduce){.js .vtl__step .vtl__card{transform:none}}
+  @media(prefers-reduced-motion:reduce){.vtl__card{transform:none!important;opacity:1!important;transition:none}}
 
   /* --- Reviews (Google-style widget) -------------------------- */
   .gwidget{max-width:980px;margin:0 auto;background:#fff;border:1px solid #e3ddcf;border-radius:12px;overflow:hidden;box-shadow:0 16px 44px rgba(20,19,15,.06)}
@@ -579,6 +580,7 @@
           <span class="altrow__n">New Construction</span>
           <h3>Custom Homes</h3>
           <p>Ground-up architecture, engineering and construction, fully in-house — a one-of-one home designed around how your family actually lives, then built by the same team that drew it.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Custom Home <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="altrow reveal">
@@ -588,6 +590,7 @@
           <span class="altrow__n">Renovation</span>
           <h3>Whole-Home Renovation</h3>
           <p>Keep the address you love and rebuild the home to a new standard — reworked layouts, new systems and finishes that feel original, not added on.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Renovation <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="altrow reveal">
@@ -597,6 +600,7 @@
           <span class="altrow__n">Expansion</span>
           <h3>Additions &amp; Expansions</h3>
           <p>Second stories, primary-suite wings and family-room additions, engineered and detailed to look like they were always part of the house.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Addition <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="altrow reveal">
@@ -606,6 +610,7 @@
           <span class="altrow__n">Renovation <span class="altrow__tag">Most requested</span></span>
           <h3>Luxury Kitchens</h3>
           <p>The room that sells the home and runs your family — custom cabinetry, stone and lighting detailed to the millimeter.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Kitchen <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="altrow reveal">
@@ -615,6 +620,7 @@
           <span class="altrow__n">Renovation <span class="altrow__tag">Most requested</span></span>
           <h3>Spa Bathrooms</h3>
           <p>Marble, brass and daylight executed like fine cabinetry — primary baths that feel like the best hotel you've ever stayed in.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Bathroom <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="altrow reveal">
@@ -624,6 +630,7 @@
           <span class="altrow__n">Lower Level</span>
           <h3>Finished Basements</h3>
           <p>Wine rooms, theaters, gyms and lounges that feel original to the home — not an afterthought below it.</p>
+          <a class="altrow__cta" href="#contact">Plan Your Basement <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </div>
@@ -655,7 +662,7 @@
     <div class="vtl">
       <div class="vtl__step">
         <span class="vtl__node">01</span>
-        <div class="vtl__card reveal">
+        <div class="vtl__card">
           <img class="vtl__img" src="images/architect-modern.jpg" alt="Architectural and structural design stage" loading="lazy">
           <div class="vtl__c"><span class="vtl__kick">Step One</span><h3>Vision &amp; Architecture</h3>
             <p>We listen, walk the site, and let design and engineering define a realistic build before a dollar is committed.</p></div>
@@ -663,7 +670,7 @@
       </div>
       <div class="vtl__step">
         <span class="vtl__node">02</span>
-        <div class="vtl__card reveal">
+        <div class="vtl__card">
           <img class="vtl__img" src="images/kitchen.jpg" alt="Selecting finishes, fixtures and materials" loading="lazy">
           <div class="vtl__c"><span class="vtl__kick">Step Two</span><h3>Bespoke Curation</h3>
             <p>Finishes, fixtures and budget are selected and locked early — so the number you approve is the number we hold.</p></div>
@@ -671,7 +678,7 @@
       </div>
       <div class="vtl__step">
         <span class="vtl__node">03</span>
-        <div class="vtl__card reveal">
+        <div class="vtl__card">
           <img class="vtl__img" src="images/facade-day.jpg" alt="In-house construction supervised on site" loading="lazy">
           <div class="vtl__c"><span class="vtl__kick">Step Three</span><h3>Master Construction</h3>
             <p>Our own crews build it, supervised on site daily, with milestone walk-throughs that keep you ahead of every decision.</p></div>
@@ -679,7 +686,7 @@
       </div>
       <div class="vtl__step">
         <span class="vtl__node">04</span>
-        <div class="vtl__card reveal">
+        <div class="vtl__card">
           <img class="vtl__img" src="images/lux-greatroom.jpg" alt="Finished home delivered at white-glove handover" loading="lazy">
           <div class="vtl__c"><span class="vtl__kick">Step Four</span><h3>White-Glove Handover</h3>
             <p>A detailed final walk-through, a punch list closed to zero, and a home delivered exactly as drawn.</p></div>
@@ -906,15 +913,32 @@
   const nav=document.getElementById('nav');
   const heroBg=document.querySelector('.hero__bg'), heroIn=document.querySelector('.hero__in');
   const reduceMotion=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  addEventListener('scroll',()=>{
-    const y=scrollY;
+  // Process timeline: the step nearest the viewport centre grows + brightens
+  var tlCards=[].slice.call(document.querySelectorAll('.vtl__card'));
+  function focusTimeline(){
+    if(reduceMotion) return;
+    var mid=innerHeight/2;
+    for(var i=0;i<tlCards.length;i++){
+      var r=tlCards[i].getBoundingClientRect();
+      var d=Math.abs((r.top+r.height/2)-mid)/innerHeight;   // 0 = centred, ~1 = far
+      var t=Math.max(0,1-d*1.3);
+      tlCards[i].style.transform='scale('+(0.93+0.12*t).toFixed(3)+')';
+      tlCards[i].style.opacity=(0.5+0.5*t).toFixed(2);
+    }
+  }
+  function onScroll(){
+    var y=scrollY;
     nav.classList.toggle('scrolled',y>40);
     if(!reduceMotion && heroIn && y<innerHeight){          // scroll-away: bg parallax + content fade/lift
       heroBg.style.transform='translateY('+(y*0.28).toFixed(1)+'px)';
       heroIn.style.transform='translateY('+(y*0.14).toFixed(1)+'px)';
       heroIn.style.opacity=Math.max(0,1-y/(innerHeight*0.62)).toFixed(3);
     }
-  },{passive:true});
+    focusTimeline();
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',focusTimeline,{passive:true});
+  focusTimeline();
   var reveals=document.querySelectorAll('.reveal');
   function showAll(){reveals.forEach(function(el){el.classList.add('in')});}
   if('IntersectionObserver' in window){
