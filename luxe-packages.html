@@ -124,8 +124,7 @@
   .pk__list .new::before{content:"+";color:var(--brass);font-size:1.1em;line-height:1.1}
 
   /* why it matters */
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
-  @media(max-width:820px){.why-grid{grid-template-columns:1fr}}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem}
   .why-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:clamp(1.6rem,3vw,2.2rem);border-top:3px solid var(--brass)}
   .why-card .eyebrow{margin-bottom:1rem}
   .why-card h3{font-size:1.6rem;margin-bottom:.8rem;line-height:1.15}
@@ -284,8 +283,8 @@
     <span class="eyebrow center on-dark">Website Build · Three Tiers</span>
     <h1>Pick the architecture <em>that ranks.</em></h1>
     <p>Every tier is a hand-built, schema-ready website you own outright — the same craftsmanship top to bottom.
-    What changes between them is <b style="color:#fff">reach</b>: how many pages, and which page types, working to
-    win you searches across the western suburbs.</p>
+    What changes between them is <b style="color:#fff">reach</b>: how many pages, which page types, and how much
+    content — working to win you searches, and AI answers, across the western suburbs.</p>
     <div class="pricechips">
       <span class="pricechip"><b>$3,500</b> Foundation</span>
       <span class="pricechip pricechip--rec"><b>$4,500</b> Standard · Recommended</span>
@@ -309,26 +308,27 @@
     <div class="grow">
       <div class="grow__row grow--f">
         <div class="grow__name">Foundation<small>$3,500</small></div>
-        <div class="grow__track"><div class="grow__fill" style="width:47%"><b>14</b> pages</div></div>
+        <div class="grow__track"><div class="grow__fill" style="width:50%"><b>19</b> pages</div></div>
       </div>
       <div class="grow__row grow--s">
         <div class="grow__name">Standard ★<small>$4,500</small></div>
-        <div class="grow__track"><div class="grow__fill" style="width:63%"><b>19</b> pages</div></div>
+        <div class="grow__track"><div class="grow__fill" style="width:75%"><b>30+</b> pages</div></div>
       </div>
       <div class="grow__row grow--p">
         <div class="grow__name">Premium<small>$5,500</small></div>
-        <div class="grow__track"><div class="grow__fill" style="width:100%"><b>30+</b> pages</div></div>
+        <div class="grow__track"><div class="grow__fill" style="width:100%"><b>40+</b> pages</div></div>
       </div>
     </div>
     <p style="text-align:center;font-size:.84rem;color:var(--stone);margin-bottom:clamp(2.4rem,5vw,3.4rem)">
-      <strong style="color:var(--brass-dk)">Standard</strong> adds 5 location pages ·
-      <strong style="color:var(--brass-dk)">Premium</strong> adds 10 more locations + a page for every completed project.</p>
+      <strong style="color:var(--brass-dk)">Foundation</strong> includes 5 location pages ·
+      <strong style="color:var(--brass-dk)">Standard</strong> adds 10 more (15 total) + a page per project ·
+      <strong style="color:var(--brass-dk)">Premium</strong> adds a resources &amp; blog engine for AI search.</p>
 
     <!-- legend -->
     <div class="ulegend">
-      <span><i style="background:var(--stone-lt)"></i> In all three tiers</span>
-      <span><i style="background:var(--brass)"></i> Added in Standard</span>
-      <span><i style="background:var(--brass-dk)"></i> Added in Premium</span>
+      <span><i style="background:var(--stone-lt)"></i> In every tier (from $3,500)</span>
+      <span><i style="background:var(--brass)"></i> Added in Standard ($4,500)</span>
+      <span><i style="background:var(--brass-dk)"></i> Added in Premium ($5,500)</span>
     </div>
 
     <!-- one sitemap, colour-coded by tier -->
@@ -341,16 +341,22 @@
             <li class="is-all"><span class="utd"></span>Services <span class="sub">— hub + 7 service pages (incl. Kitchen <span class="star">★</span> &amp; Bath <span class="star">★</span>)</span></li>
             <li class="is-all"><span class="utd"></span>Portfolio
               <ul>
-                <li class="is-prm"><span class="utd"></span>Project Pages <span class="utb--p">Premium</span> <span class="sub">— one per completed build</span></li>
+                <li class="is-std"><span class="utd"></span>Project Pages <span class="utb--s">Standard</span> <span class="sub">— one per completed build</span></li>
               </ul>
             </li>
             <li class="is-all"><span class="utd"></span>FAQ</li>
             <li class="is-all"><span class="utd"></span>Contact</li>
-            <li class="is-std"><span class="utd"></span>Locations <span class="utb--s">Standard</span>
+            <li class="is-all"><span class="utd"></span>Locations
               <ul>
-                <li class="is-std"><span class="utd"></span>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park <span class="sub">(5 towns)</span></li>
-                <li class="is-prm"><span class="utd"></span>+ Oak Brook · Western Springs · Downers Grove · Darien · Clarendon Hills <span class="utb--p">Premium</span></li>
-                <li class="is-prm"><span class="utd"></span>+ Homer Glen · Lockport · La Grange · Glen Ellyn · Palos Park <span class="sub">(15 towns total)</span></li>
+                <li class="is-all"><span class="utd"></span>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park <span class="sub">(5 towns — included)</span></li>
+                <li class="is-std"><span class="utd"></span>+ Oak Brook · Western Springs · Downers Grove · Darien · Clarendon Hills <span class="utb--s">Standard</span></li>
+                <li class="is-std"><span class="utd"></span>+ Homer Glen · Lockport · La Grange · Glen Ellyn · Palos Park <span class="sub">(15 towns total)</span></li>
+              </ul>
+            </li>
+            <li class="is-prm"><span class="utd"></span>Resources &amp; Blog <span class="utb--p">Premium</span>
+              <ul>
+                <li class="is-prm"><span class="utd"></span>Cost &amp; planning guides <span class="sub">— "kitchen remodel cost," etc.</span></li>
+                <li class="is-prm"><span class="utd"></span>Blog / articles <span class="sub">— built for AI search &amp; new keywords</span></li>
               </ul>
             </li>
           </ul>
@@ -372,11 +378,11 @@
     <div class="pk reveal">
       <div class="pk__head">
         <div class="pk__name">Foundation</div>
-        <div class="pk__tag">Look the part &amp; rank for services</div>
+        <div class="pk__tag">Compete across your core suburbs</div>
         <div class="pk__price">$3,500<small> one-time</small></div>
-        <div class="pk__meta"><div><b>14</b>pages</div><div><b>2–3</b>weeks</div></div>
+        <div class="pk__meta"><div><b>~19</b>pages</div><div><b>2–3</b>weeks</div></div>
       </div>
-      <div class="pk__base">The complete service architecture — every service you offer gets its own page.</div>
+      <div class="pk__base">The full service architecture — plus a dedicated page for each of your five core markets.</div>
       <div class="pk__body">
         <div class="pk__lbl">What you get</div>
         <ul class="pk__list">
@@ -384,35 +390,36 @@
           <li>7 dedicated service pages</li>
           <li>Kitchen &amp; bath — your highest-demand searches <span class="star">★</span></li>
           <li>Portfolio, FAQ &amp; Contact</li>
+          <li class="new">5 dedicated location pages</li>
           <li>Full schema markup + AI-ready build</li>
         </ul>
-        <p class="pk__note">No location pages yet — you'll rank for <em>what</em> you do, not yet for <em>where</em>.</p>
+        <p class="pk__note">Your five highest-value markets:<br><strong>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park</strong>.</p>
       </div>
-      <div class="pk__foot"><strong>Best for:</strong> a credible, premium presence that ranks for what you do — but not yet for <em>where</em> you do it.</div>
+      <div class="pk__foot"><strong>Best for:</strong> getting found for your services across your five most important suburbs from day one.</div>
       <div class="pk__cta"><a class="btn btn--ghost" href="#contact">Start with Foundation</a></div>
     </div>
 
     <!-- STANDARD (RECOMMENDED) -->
     <div class="pk pk--rec reveal">
-      <div class="pk__ribbon">★ Recommended — competes across the suburbs</div>
+      <div class="pk__ribbon">★ Recommended — own the market</div>
       <div class="pk__head">
         <div class="pk__name">Standard</div>
-        <div class="pk__tag">Get found town by town</div>
+        <div class="pk__tag">Own every suburb + every project</div>
         <div class="pk__price">$4,500<small> one-time</small></div>
-        <div class="pk__meta"><div><b>~19</b>pages</div><div><b>3–4</b>weeks</div></div>
+        <div class="pk__meta"><div><b>~30+</b>pages</div><div><b>3–4</b>weeks</div></div>
       </div>
-      <div class="pk__adds"><span class="k">Everything in Foundation, plus</span><b>+ 5 Location Pages</b></div>
+      <div class="pk__adds"><span class="k">Everything in Foundation, plus</span><b>+ 10 Locations &amp; Project Pages</b></div>
       <div class="pk__body">
         <div class="pk__lbl">What you get</div>
         <ul class="pk__list">
           <li>Everything in Foundation</li>
-          <li class="new">5 dedicated location pages</li>
+          <li class="new">10 more location pages — 15 towns total</li>
+          <li class="new">A project page for every completed build</li>
         </ul>
-        <p class="pk__note">A real page for each of your five highest-value markets:<br>
-        <strong>Lemont · Naperville · Burr Ridge · Hinsdale · Orland Park</strong> — the move every market leader
-        already made, and the one Luxe is missing today.</p>
+        <p class="pk__note">Full coverage of the western suburbs, and every finished home becomes its own ranking
+        page — the site grows to 35, 40+ pages over time with no new build fee.</p>
       </div>
-      <div class="pk__foot"><strong>Best for:</strong> showing up first for "[service] in [town]" across the suburbs that book six-figure jobs. The credible local competitor.</div>
+      <div class="pk__foot"><strong>Best for:</strong> dominating the western suburbs and turning every completed project into a ranking asset that feeds the next lead.</div>
       <div class="pk__cta"><a class="btn btn--brass" href="#contact">Choose Standard</a></div>
     </div>
 
@@ -420,22 +427,23 @@
     <div class="pk reveal">
       <div class="pk__head">
         <div class="pk__name">Premium</div>
-        <div class="pk__tag">Own the market</div>
+        <div class="pk__tag">Win Google <em>and</em> AI search</div>
         <div class="pk__price">$5,500<small> one-time</small></div>
-        <div class="pk__meta"><div><b>~30+</b>pages*</div><div><b>4–6</b>weeks</div></div>
+        <div class="pk__meta"><div><b>~40+</b>pages*</div><div><b>4–6</b>weeks</div></div>
       </div>
-      <div class="pk__adds"><span class="k">Everything in Standard, plus</span><b>+ 10 Locations &amp; Project Pages</b></div>
+      <div class="pk__adds"><span class="k">Everything in Standard, plus</span><b>+ Resources Hub &amp; Blog</b></div>
       <div class="pk__body">
         <div class="pk__lbl">What you get</div>
         <ul class="pk__list">
           <li>Everything in Standard</li>
-          <li class="new">10 more location pages — 15 towns total</li>
-          <li class="new">A project page for every completed build</li>
+          <li class="new">Resources hub — cost &amp; planning guides</li>
+          <li class="new">Blog built for AI search (ChatGPT, Perplexity, Google AI)</li>
+          <li class="new">Targets high-intent "how much / how to" keywords</li>
         </ul>
-        <p class="pk__note">*The site grows with you — every finished home adds a project page, expanding to 35,
-        40+ pages over time with no new build fee.</p>
+        <p class="pk__note">*Cost guides and articles are the content AI engines cite — and they capture the
+        research-phase searches ("kitchen remodel cost") your competitors already own. The library keeps growing.</p>
       </div>
-      <div class="pk__foot"><strong>Best for:</strong> dominating the western suburbs and turning every completed project into a ranking asset that feeds the next lead.</div>
+      <div class="pk__foot"><strong>Best for:</strong> getting cited by AI search and owning the high-intent keywords buyers research months before they call.</div>
       <div class="pk__cta"><a class="btn btn--ghost" href="#contact">Go Premium</a></div>
     </div>
 
@@ -446,11 +454,12 @@
 <section class="section bg-paper" id="why">
   <div class="container">
     <div class="reveal" style="max-width:60ch;margin-bottom:2.4rem">
-      <span class="eyebrow">Why The Page Count Is The Strategy</span>
+      <span class="eyebrow">Why It's Worth It</span>
       <h2 class="h2" style="margin:1rem 0 1rem">You're not paying for more pages. You're paying for more ways to be found.</h2>
-      <p style="color:#4a463c">The jump from $3,500 to $5,500 isn't about polish — every build gets the same
-      craftsmanship. It's about the two page types that actually move you up Google for the searches that book
-      jobs: <strong>location pages</strong> and <strong>project pages</strong>. Here's why they're worth it.</p>
+      <p style="color:#4a463c">Every build gets the same craftsmanship. What you're really buying as you move up is
+      reach — the page types and content that move you up Google, and now <strong>AI search</strong>, for the
+      queries that book six-figure jobs: <strong>location pages</strong>, <strong>project pages</strong>, and a
+      <strong>content engine</strong>. Here's why each is worth it.</p>
     </div>
 
     <div class="why-grid reveal">
@@ -485,6 +494,22 @@
           <div><b>3×</b><span>Ranks · proves ·<br>links internally</span></div>
         </div>
       </div>
+
+      <div class="why-card">
+        <span class="eyebrow">Why resources &amp; a blog</span>
+        <h3>The content AI search actually quotes.</h3>
+        <p>Buyers research for months before they call — "how much does a kitchen remodel cost," "custom home vs.
+        renovation," "home addition ideas." Cost guides and articles capture those high-intent searches your
+        competitors already own, and they're exactly the structured, factual content <em>AI engines like ChatGPT,
+        Perplexity and Google's AI Overviews pull from and cite</em>.</p>
+        <p>It's how you show up when the answer isn't a list of blue links anymore — and a library that compounds,
+        earning new keywords every month.</p>
+        <div class="stat">
+          <div><b>AI</b><span>Cited by ChatGPT,<br>Perplexity &amp; Google AI</span></div>
+          <div><b>1,600+</b><span>"remodel cost" searches<br>/mo in your market</span></div>
+          <div><b>∞</b><span>New keywords as<br>the library grows</span></div>
+        </div>
+      </div>
     </div>
 
     <p class="reveal" style="text-align:center;font-size:.9rem;color:var(--stone);margin-top:1.8rem">These moves come
@@ -508,24 +533,27 @@
       </tr></thead>
       <tbody>
         <tr class="cmp-price"><td>One-time build fee</td><td>$3,500</td><td class="rec">$4,500</td><td>$5,500</td></tr>
-        <tr><td>Total pages</td><td>14</td><td class="rec">~19</td><td>~30+</td></tr>
+        <tr><td>Total pages</td><td>~19</td><td class="rec">~30+</td><td>~40+</td></tr>
         <tr><td>Core pages (Home, About, Method, FAQ, Contact)</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>Services hub + 7 service pages</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>Kitchen &amp; bath pages (highest demand)</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>Portfolio index</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
-        <tr><td>Dedicated location pages</td><td class="no">—</td><td class="rec yes">5</td><td class="yes">15</td></tr>
-        <tr><td>Individual project / case-study pages</td><td class="no">—</td><td class="rec no">—</td><td class="yes">✓ 1 per build</td></tr>
+        <tr><td>Dedicated location pages</td><td class="yes">5</td><td class="rec yes">15</td><td class="yes">15</td></tr>
+        <tr><td>Individual project / case-study pages</td><td class="no">—</td><td class="rec yes">✓ 1 per build</td><td class="yes">✓ 1 per build</td></tr>
+        <tr><td>Resources / cost-guide hub</td><td class="no">—</td><td class="rec no">—</td><td class="yes">✓</td></tr>
+        <tr><td>Blog built for AI search (GEO)</td><td class="no">—</td><td class="rec no">—</td><td class="yes">✓</td></tr>
         <tr><td>Full schema markup + AI-readiness</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>Lead form + click-to-call on every page</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
         <tr><td>You own the site, content &amp; images</td><td class="yes">✓</td><td class="rec yes">✓</td><td class="yes">✓</td></tr>
-        <tr><td>Built to rank for…</td><td>your services</td><td class="rec">services + your towns</td><td>the whole market</td></tr>
+        <tr><td>Built to rank for…</td><td>your towns</td><td class="rec">the whole market</td><td>Google + AI search</td></tr>
       </tbody>
     </table>
   </div>
   <p style="font-size:.78rem;color:var(--stone);margin-top:1rem">Every tier is a one-time website build — no
   subscription to own it. Rankings are earned by the ongoing marketing work (SEO, Google Business Profile, content
   &amp; CRM); the build is the foundation that work stands on. <strong style="color:var(--brass-dk)">We recommend
-  Standard</strong> as the floor for competing across the western suburbs — and Premium to own them.</p>
+  Standard</strong> as the sweet spot for owning the western suburbs — step up to Premium to win AI search and the
+  research-phase keywords your competitors haven't claimed.</p>
 </section>
 
 <!-- NEXT STEPS / CTA -->
