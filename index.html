@@ -930,10 +930,14 @@
   function applyScroll(){
     var y=scrollY;
     nav.classList.toggle('scrolled',y>40);
-    if(!reduceMotion && heroIn && y<innerHeight){          // scroll-away: bg parallax + content fade/lift
-      heroBg.style.transform='translate3d(0,'+(y*0.28).toFixed(1)+'px,0)';
-      heroIn.style.transform='translate3d(0,'+(y*0.14).toFixed(1)+'px,0)';
-      heroIn.style.opacity=Math.max(0,1-y/(innerHeight*0.62)).toFixed(3);
+    if(!reduceMotion && heroIn){
+      if(innerWidth>880 && y<innerHeight){                 // desktop only: bg parallax + content fade/lift
+        heroBg.style.transform='translate3d(0,'+(y*0.28).toFixed(1)+'px,0)';
+        heroIn.style.transform='translate3d(0,'+(y*0.14).toFixed(1)+'px,0)';
+        heroIn.style.opacity=Math.max(0,1-y/(innerHeight*0.62)).toFixed(3);
+      } else if(innerWidth<=880 && heroIn.style.opacity!==''){  // stacked layout: never fade the hero/quiz
+        heroBg.style.transform=heroIn.style.transform=heroIn.style.opacity='';
+      }
     }
     focusTimeline();
   }
